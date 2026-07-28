@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Copper &amp; Code — Embedded Systems Studio</title>
+<meta name="description" content="A compact embedded studio building firmware, PCBs, and low-power wireless for connected and medical-grade devices — from first schematic to a design that manufactures.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0B0E0F;
+  --ink-2:#0E1315;
+  --panel:#12181B;
+  --panel-2:#161D21;
+  --line:#212A2E;
+  --line-2:#2E3A40;
+  --mist:#7F8D93;
+  --mist-2:#9BA9AF;
+  --paper:#E9EDEE;
+  --gold:#ECB44A;
+  --gold-2:#F4C766;
+  --gold-soft:rgba(236,180,74,0.12);
+  --gold-line:rgba(236,180,74,0.30);
+  --font-display:'Archivo',system-ui,sans-serif;
+  --font-body:'IBM Plex Sans',system-ui,sans-serif;
+  --font-mono:'IBM Plex Mono',ui-monospace,monospace;
+  --maxw:1180px;
+  --pad:clamp(20px,5vw,40px);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  background:var(--ink);
+  color:var(--paper);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+/* faint engineering-paper graticule over the whole page */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image:
+    linear-gradient(var(--line) 1px,transparent 1px),
+    linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:34px 34px;
+  opacity:.28;
+  pointer-events:none;
+  z-index:0;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad);position:relative;z-index:1}
+
+.mono{font-family:var(--font-mono)}
+.eyebrow{
+  font-family:var(--font-mono);
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--gold);
+}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+
+/* ---------- NAV ---------- */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  transition:background .3s ease,border-color .3s ease,backdrop-filter .3s ease;
+  border-bottom:1px solid transparent;
+}
+.nav.scrolled{
+  background:rgba(11,14,15,.82);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{max-width:var(--maxw);margin:0 auto;padding:14px var(--pad);display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:11px;font-family:var(--font-display);font-weight:700;letter-spacing:.01em;font-size:16px}
+.chip{
+  width:30px;height:30px;flex:none;
+  border:1.5px solid var(--gold-line);
+  border-radius:6px;
+  display:grid;place-items:center;
+  font-family:var(--font-mono);font-size:12px;font-weight:500;color:var(--gold);
+  background:var(--gold-soft);
+  position:relative;
+}
+.chip::before,.chip::after{content:"";position:absolute;width:5px;height:1.5px;background:var(--gold-line)}
+.chip::before{left:-6px;top:9px;box-shadow:0 8px 0 var(--gold-line)}
+.chip::after{right:-6px;top:9px;box-shadow:0 8px 0 var(--gold-line)}
+.brand small{display:block;font-family:var(--font-mono);font-weight:400;font-size:10px;letter-spacing:.14em;color:var(--mist);text-transform:uppercase;margin-top:-3px}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{font-family:var(--font-mono);font-size:13px;color:var(--mist-2);transition:color .2s}
+.nav-links a:hover{color:var(--paper)}
+.btn{
+  font-family:var(--font-mono);font-size:13px;letter-spacing:.03em;
+  padding:9px 16px;border-radius:7px;transition:all .2s ease;display:inline-flex;align-items:center;gap:8px;
+}
+.btn-primary{background:var(--gold);color:#160F00;font-weight:500;border:1px solid var(--gold)}
+.btn-primary:hover{background:var(--gold-2);border-color:var(--gold-2);box-shadow:0 0 24px var(--gold-soft)}
+.btn-ghost{border:1px solid var(--line-2);color:var(--paper)}
+.btn-ghost:hover{border-color:var(--gold-line);color:var(--gold)}
+.nav-cta{display:flex;align-items:center;gap:14px}
+.hamburger{display:none;width:40px;height:38px;border:1px solid var(--line-2);border-radius:7px;background:transparent;color:var(--paper);flex-direction:column;justify-content:center;align-items:center;gap:4px}
+.hamburger span{display:block;width:16px;height:1.5px;background:currentColor;transition:.2s}
+
+/* ---------- HERO ---------- */
+.hero{padding:150px 0 60px}
+.hero-eyebrow{margin-bottom:22px}
+.hero h1{
+  font-family:var(--font-display);
+  font-weight:800;
+  font-size:clamp(2.4rem,6.2vw,4.6rem);
+  line-height:1.02;
+  letter-spacing:-.02em;
+  max-width:16ch;
+}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero-sub{margin-top:26px;font-size:clamp(1rem,1.6vw,1.18rem);color:var(--mist-2);max-width:60ch}
+.hero-actions{margin-top:34px;display:flex;flex-wrap:wrap;gap:14px}
+.hero-actions .btn{padding:13px 22px;font-size:14px}
+
+/* hero readout panel */
+.readout-panel{margin-top:50px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel);box-shadow:0 24px 70px -50px rgba(0,0,0,.9)}
+.readout-head{display:flex;justify-content:space-between;align-items:center;padding:13px 16px;border-bottom:1px solid var(--line);font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.readout-head .rh-left{display:flex;align-items:center;gap:9px;color:var(--gold)}
+.readout-head .rh-right{color:#4a5459}
+.hero-readouts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line)}
+.led{width:8px;height:8px;border-radius:50%;background:var(--gold);position:relative}
+.led::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1px solid var(--gold);opacity:.6;animation:ping 2s ease-out infinite}
+@keyframes ping{0%{transform:scale(.7);opacity:.7}80%,100%{transform:scale(2.1);opacity:0}}
+.ro{background:var(--panel);padding:16px 18px}
+.ro .k{font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;color:var(--mist);text-transform:uppercase}
+.ro .v{font-family:var(--font-mono);font-size:13px;color:var(--paper);margin-top:6px}
+.ro .v b{color:var(--gold);font-weight:500}
+
+/* ---------- TICKER ---------- */
+.ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--ink-2);overflow:hidden;margin-top:64px;position:relative;z-index:1}
+.ticker-track{display:flex;gap:0;white-space:nowrap;animation:scroll 40s linear infinite;width:max-content}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker-item{font-family:var(--font-mono);font-size:13px;color:var(--mist-2);padding:14px 26px;display:inline-flex;align-items:center;gap:26px}
+.ticker-item::after{content:"◈";color:var(--gold);font-size:9px}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- SECTION SHELL ---------- */
+.section{padding:clamp(72px,9vw,120px) 0;position:relative;z-index:1}
+.section.alt{background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:52px;flex-wrap:wrap}
+.sec-head .idx{font-family:var(--font-mono);font-size:12px;color:var(--gold);letter-spacing:.18em}
+.sec-head h2{font-family:var(--font-display);font-weight:700;font-size:clamp(1.8rem,3.6vw,2.7rem);letter-spacing:-.015em;line-height:1.08;margin-top:12px;max-width:18ch}
+.sec-head .lede{color:var(--mist-2);max-width:44ch;font-size:1rem}
+
+/* ---------- SERVICES ---------- */
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.svc{background:var(--panel);padding:clamp(26px,3vw,40px);transition:background .25s ease;position:relative}
+.svc:hover{background:var(--panel-2)}
+.svc:hover .svc-ref{color:var(--gold);border-color:var(--gold-line)}
+.svc-top{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.svc-ref{font-family:var(--font-mono);font-size:12px;color:var(--mist);border:1px solid var(--line-2);border-radius:5px;padding:3px 8px;transition:.25s}
+.svc h3{font-family:var(--font-display);font-weight:700;font-size:1.3rem;letter-spacing:-.01em}
+.svc p{color:var(--mist-2);font-size:.97rem;margin-bottom:20px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-family:var(--font-mono);font-size:11px;color:var(--mist-2);border:1px solid var(--line-2);border-radius:20px;padding:4px 11px}
+
+/* ---------- WORK ---------- */
+.work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.work{
+  border:1px solid var(--line);border-radius:14px;background:var(--panel);
+  padding:clamp(24px,3vw,34px);transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;
+  display:flex;flex-direction:column;gap:16px;
+}
+.work:hover{transform:translateY(-4px);border-color:var(--gold-line);box-shadow:0 24px 60px -40px rgba(236,180,74,.35)}
+.work-meta{display:flex;justify-content:space-between;align-items:center;font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;color:var(--mist);text-transform:uppercase}
+.work-meta .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);display:inline-block;margin-right:7px}
+.work h3{font-family:var(--font-display);font-weight:700;font-size:1.35rem;letter-spacing:-.01em}
+.work p{color:var(--mist-2);font-size:.96rem;flex:1}
+.work-media{
+  position:relative;aspect-ratio:16/10;border-radius:10px;overflow:hidden;
+  background:var(--panel-2);border:1px solid var(--line);display:grid;place-items:center;
+  background-image:repeating-linear-gradient(45deg,transparent 0 10px,rgba(46,58,64,.18) 10px 11px);
+}
+.media-hint{
+  position:absolute;font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;color:var(--mist);
+  border:1px dashed var(--line-2);border-radius:6px;padding:7px 12px;text-align:center;line-height:1.5;
+}
+.work-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+
+/* ---------- STACK MATRIX ---------- */
+.matrix{border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.mrow{display:grid;grid-template-columns:200px 1fr;gap:0;border-bottom:1px solid var(--line);background:var(--panel)}
+.mrow:last-child{border-bottom:none}
+.mrow:hover{background:var(--panel-2)}
+.mrow .mkey{padding:20px 24px;font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;color:var(--gold);text-transform:uppercase;border-right:1px solid var(--line);display:flex;align-items:center}
+.mrow .mval{padding:18px 24px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+
+/* ---------- PROCESS ---------- */
+.steps{display:flex;flex-direction:column}
+.step{display:grid;grid-template-columns:110px 1fr;gap:clamp(20px,4vw,60px);padding:30px 0;border-top:1px solid var(--line);align-items:baseline}
+.step:last-child{border-bottom:1px solid var(--line)}
+.step-n{font-family:var(--font-mono);font-size:14px;color:var(--gold);letter-spacing:.05em;position:relative;padding-left:20px}
+.step-n::before{content:"";position:absolute;left:0;top:6px;width:8px;height:8px;background:var(--gold);border-radius:1px}
+.step-body h3{font-family:var(--font-display);font-weight:700;font-size:1.4rem;letter-spacing:-.01em;margin-bottom:8px}
+.step-body p{color:var(--mist-2);max-width:60ch}
+
+/* ---------- LOCATIONS ---------- */
+.loc-lede{color:var(--mist-2);max-width:56ch;margin-bottom:44px;font-size:1.05rem}
+.loc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.loc{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:24px;transition:border-color .25s}
+.loc:hover{border-color:var(--gold-line)}
+.loc.hq{border-color:var(--gold-line);background:linear-gradient(180deg,var(--gold-soft),var(--panel))}
+.loc-role{font-family:var(--font-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:7px}
+.loc-city{font-family:var(--font-display);font-weight:700;font-size:1.3rem}
+.loc-country{font-family:var(--font-mono);font-size:12px;color:var(--mist);margin-top:2px}
+.loc-addr{color:var(--mist-2);font-size:.9rem;margin-top:16px;line-height:1.5}
+.loc-tz{font-family:var(--font-mono);font-size:11px;color:var(--mist);margin-top:14px;padding-top:14px;border-top:1px solid var(--line);letter-spacing:.06em}
+
+/* ---------- CONTACT ---------- */
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(32px,5vw,72px);align-items:start}
+.contact-info h2{font-family:var(--font-display);font-weight:700;font-size:clamp(1.9rem,3.8vw,2.8rem);letter-spacing:-.015em;line-height:1.05}
+.contact-info p{color:var(--mist-2);margin-top:20px;max-width:38ch}
+.contact-direct{margin-top:36px;border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:22px}
+.contact-direct .k{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;color:var(--mist);text-transform:uppercase}
+.contact-direct a{font-family:var(--font-mono);font-size:15px;color:var(--gold);margin-top:6px;display:inline-block}
+.status{display:flex;align-items:center;gap:10px;margin-top:22px;font-family:var(--font-mono);font-size:12px;color:var(--mist-2);letter-spacing:.05em}
+
+form{display:grid;gap:16px}
+.field{display:grid;gap:7px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mist)}
+input,select,textarea{
+  font-family:var(--font-body);font-size:15px;color:var(--paper);
+  background:var(--panel-2);border:1px solid var(--line-2);border-radius:8px;
+  padding:13px 14px;transition:border-color .2s,box-shadow .2s;width:100%;
+}
+input::placeholder,textarea::placeholder{color:#5a656a}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold-line);box-shadow:0 0 0 3px var(--gold-soft)}
+textarea{resize:vertical;min-height:120px}
+select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23ECB44A' d='M6 8 0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px}
+.submit{margin-top:4px}
+.submit .btn-primary{width:100%;justify-content:center;padding:15px;font-size:14px}
+.form-note{font-family:var(--font-mono);font-size:12px;color:var(--gold);min-height:18px;letter-spacing:.03em}
+
+/* ---------- FOOTER ---------- */
+.footer{border-top:1px solid var(--line);padding:60px 0 40px;background:var(--ink-2);position:relative;z-index:1}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
+.footer-brand p{color:var(--mist);font-size:.92rem;margin-top:16px;max-width:34ch}
+.footer h4{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mist);margin-bottom:16px}
+.footer ul{list-style:none;display:grid;gap:10px}
+.footer ul a{color:var(--mist-2);font-size:.92rem;transition:color .2s}
+.footer ul a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid var(--line);padding-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+.footer-bottom p,.footer-bottom .build{font-family:var(--font-mono);font-size:11px;color:var(--mist);letter-spacing:.05em}
+.footer-bottom .build{color:#4a5459}
+
+/* ---------- REVEAL ---------- */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:900px){
+  .nav-links{
+    position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;align-items:flex-start;gap:0;
+    background:rgba(11,14,15,.97);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+    max-height:0;overflow:hidden;transition:max-height .3s ease;
+  }
+  .nav-links.open{max-height:340px}
+  .nav-links a{padding:16px var(--pad);width:100%;border-top:1px solid var(--line);font-size:14px}
+  .hamburger{display:flex}
+  .nav-cta .btn-ghost{display:none}
+  .svc-grid,.work-grid{grid-template-columns:1fr}
+  .loc-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-readouts{grid-template-columns:repeat(2,1fr)}
+  .contact-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .mrow{grid-template-columns:1fr}
+  .mrow .mkey{border-right:none;border-bottom:1px solid var(--line);padding-bottom:14px}
+}
+@media(max-width:560px){
+  .frow{grid-template-columns:1fr}
+  .loc-grid,.footer-grid{grid-template-columns:1fr}
+  .step{grid-template-columns:1fr;gap:12px}
+  .brand small{display:none}
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+  .led::after{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <span class="chip">Cu</span>
+      <span>Copper&nbsp;&amp;&nbsp;Code<small>Embedded Systems Studio</small></span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#stack">Stack</a>
+      <a href="#process">Process</a>
+      <a href="#studio">Studio</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-ghost">hello@copperandcode.net</a>
+      <a href="#contact" class="btn btn-primary">Start a project</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow hero-eyebrow reveal">Firmware · Hardware · Low-power wireless</div>
+    <h1 class="reveal">Embedded engineering for products that <em>have to work.</em></h1>
+    <p class="hero-sub reveal">Copper &amp; Code is a compact embedded studio building firmware, PCBs, and low-power wireless for connected and medical-grade devices — from the first schematic to a design that manufactures.</p>
+    <div class="hero-actions reveal">
+      <a href="#contact" class="btn btn-primary">Start a project →</a>
+      <a href="#work" class="btn btn-ghost">See selected work</a>
+    </div>
+
+    <!-- CAPABILITIES READOUT PANEL -->
+    <div class="readout-panel reveal">
+      <div class="readout-head">
+        <span class="rh-left"><span class="led"></span>Available for projects</span>
+        <span class="rh-right">Cu//CODE</span>
+      </div>
+      <div class="hero-readouts">
+        <div class="ro"><div class="k">Firmware</div><div class="v"><b>nRF52</b> · ESP32 · STM32</div></div>
+        <div class="ro"><div class="k">Wireless</div><div class="v">BLE 5.x · Wi-Fi · <b>LTE</b></div></div>
+        <div class="ro"><div class="k">Sensing</div><div class="v">PPG · ECG · <b>NIR</b></div></div>
+        <div class="ro"><div class="k">Coverage</div><div class="v"><b>4</b> time zones</div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track" id="ticker">
+    <span class="ticker-item">nRF52840</span>
+    <span class="ticker-item">Zephyr RTOS</span>
+    <span class="ticker-item">ESP32-S3</span>
+    <span class="ticker-item">nRF Connect SDK</span>
+    <span class="ticker-item">BLE 5.4</span>
+    <span class="ticker-item">FreeRTOS</span>
+    <span class="ticker-item">LTE Cat-M</span>
+    <span class="ticker-item">MAX86176 AFE</span>
+    <span class="ticker-item">4-layer HDI</span>
+    <span class="ticker-item">Via-in-pad</span>
+    <span class="ticker-item">PMIC power trees</span>
+    <span class="ticker-item">OTA DFU</span>
+    <span class="ticker-item">Impedance control</span>
+    <span class="ticker-item">µA sleep budgets</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="reveal">
+        <span class="idx">01 / SERVICES</span>
+        <h2>What we design, build, and ship</h2>
+      </div>
+      <p class="lede reveal">Four disciplines under one roof — so the schematic, the layout, and the firmware are built by people who talk to each other.</p>
+    </div>
+
+    <div class="svc-grid">
+      <div class="svc reveal">
+        <div class="svc-top"><span class="svc-ref">U1</span><h3>Firmware Engineering</h3></div>
+        <p>Bare-metal and RTOS firmware on nRF52, ESP32, and STM32 — drivers, BLE/Wi-Fi stacks, low-power state machines, and OTA that survives a bad connection.</p>
+        <div class="tags"><span class="tag">Zephyr / NCS</span><span class="tag">FreeRTOS</span><span class="tag">BLE stacks</span><span class="tag">OTA DFU</span><span class="tag">C / C++</span></div>
+      </div>
+      <div class="svc reveal">
+        <div class="svc-top"><span class="svc-ref">U2</span><h3>PCB &amp; Hardware Design</h3></div>
+        <p>Schematic capture and multi-layer layout — power trees, mixed-signal, and RF, with HDI and via-in-pad for fine-pitch and WLCSP parts.</p>
+        <div class="tags"><span class="tag">4–6 layer</span><span class="tag">HDI</span><span class="tag">RF layout</span><span class="tag">DFM review</span></div>
+      </div>
+      <div class="svc reveal">
+        <div class="svc-top"><span class="svc-ref">U3</span><h3>Wireless &amp; Low Power</h3></div>
+        <p>BLE, Wi-Fi, and cellular connectivity with current budgets measured in microamps. Antenna matching, coexistence, and battery life you can defend to a client.</p>
+        <div class="tags"><span class="tag">BLE 5.x</span><span class="tag">LTE Cat-M / NB</span><span class="tag">PMIC</span><span class="tag">µA sleep</span></div>
+      </div>
+      <div class="svc reveal">
+        <div class="svc-top"><span class="svc-ref">U4</span><h3>Sensing &amp; Medical</h3></div>
+        <p>Optical and biopotential front ends — PPG, ECG, SpO₂, NIR — with the documentation and verification your regulatory path actually needs.</p>
+        <div class="tags"><span class="tag">PPG / ECG AFE</span><span class="tag">SpO₂</span><span class="tag">FDA Q-Sub</span><span class="tag">Verification</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="section alt" id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="reveal">
+        <span class="idx">02 / SELECTED WORK</span>
+        <h2>A track record in hard problems</h2>
+      </div>
+      <p class="lede reveal">Device classes we've taken from concept to working hardware. Client names withheld under NDA — the engineering speaks for itself.</p>
+    </div>
+
+    <div class="work-grid">
+      <article class="work reveal">
+        <div class="work-media">
+          <span class="media-hint">Drop photo at<br>images/ecg-patch.jpg</span>
+          <img src="images/ecg-patch.jpg" alt="Cellular ECG patch prototype" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="work-meta"><span><span class="dot"></span>Medical wearable</span><span>LTE · ECG</span></div>
+        <h3>Cellular ECG patch</h3>
+        <p>A 4G-connected wearable streaming clinical-grade ECG. We designed the power tree to survive a 2&nbsp;A modem peak on a tight battery budget, and the firmware to keep the link alive in the field.</p>
+        <div class="tags"><span class="tag">Cellular modem</span><span class="tag">ECG AFE</span><span class="tag">Power design</span></div>
+      </article>
+      <article class="work reveal">
+        <div class="work-media">
+          <span class="media-hint">Drop photo at<br>images/smart-ring.jpg</span>
+          <img src="images/smart-ring.jpg" alt="Smart health ring PCB" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="work-meta"><span><span class="dot"></span>Wearable sensing</span><span>PPG · ECG</span></div>
+        <h3>Smart health ring</h3>
+        <p>Continuous PPG, ECG, and motion in a ring form factor. Fine-pitch WLCSP layout with via-in-pad on an HDI stack-up, paired with a sensing front end for clean biosignals off the finger.</p>
+        <div class="tags"><span class="tag">PPG / ECG</span><span class="tag">WLCSP</span><span class="tag">HDI PCB</span></div>
+      </article>
+      <article class="work reveal">
+        <div class="work-media">
+          <span class="media-hint">Drop photo at<br>images/pbm-patch.jpg</span>
+          <img src="images/pbm-patch.jpg" alt="Photobiomodulation LED patch" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="work-meta"><span><span class="dot"></span>Therapeutic device</span><span>NIR · Thermal</span></div>
+        <h3>Photobiomodulation patch</h3>
+        <p>A 36-LED near-infrared therapy wearable with brutal thermal and power constraints. We used PWM duty-cycling and a boost topology to keep it effective and still comfortable to wear.</p>
+        <div class="tags"><span class="tag">LED drivers</span><span class="tag">Thermal budget</span><span class="tag">Boost converter</span></div>
+      </article>
+      <article class="work reveal">
+        <div class="work-media">
+          <span class="media-hint">Drop photo at<br>images/pill-dispenser.jpg</span>
+          <img src="images/pill-dispenser.jpg" alt="Automated pill dispenser device" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="work-meta"><span><span class="dot"></span>Connected product</span><span>ESP32 · BLE</span></div>
+        <h3>Automated pill dispenser</h3>
+        <p>An ESP32-based device that sorts and dispenses medication on schedule, controlled over BLE. Motion control, sensing, and a phone app talking to firmware that doesn't miss a dose.</p>
+        <div class="tags"><span class="tag">ESP32</span><span class="tag">Motion control</span><span class="tag">BLE app link</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- STACK -->
+<section class="section" id="stack">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="reveal">
+        <span class="idx">03 / CAPABILITIES</span>
+        <h2>The stack we reach for</h2>
+      </div>
+      <p class="lede reveal">Silicon, tooling, and standards we work with day to day. If it's connected, low-power, or measures a body, it's probably in here.</p>
+    </div>
+
+    <div class="matrix reveal">
+      <div class="mrow">
+        <div class="mkey">Microcontrollers</div>
+        <div class="mval"><span class="tag">nRF52840</span><span class="tag">nRF52832</span><span class="tag">ESP32-S3</span><span class="tag">ESP32-PICO</span><span class="tag">STM32</span></div>
+      </div>
+      <div class="mrow">
+        <div class="mkey">RTOS / SDK</div>
+        <div class="mval"><span class="tag">Zephyr</span><span class="tag">nRF Connect SDK</span><span class="tag">FreeRTOS</span><span class="tag">ESP-IDF</span></div>
+      </div>
+      <div class="mrow">
+        <div class="mkey">Wireless</div>
+        <div class="mval"><span class="tag">BLE 5.x</span><span class="tag">Wi-Fi</span><span class="tag">LTE Cat-M / NB</span><span class="tag">GNSS</span></div>
+      </div>
+      <div class="mrow">
+        <div class="mkey">Sensing / AFE</div>
+        <div class="mval"><span class="tag">PPG</span><span class="tag">ECG</span><span class="tag">SpO₂</span><span class="tag">NIR optical</span><span class="tag">Biopotential</span></div>
+      </div>
+      <div class="mrow">
+        <div class="mkey">Power</div>
+        <div class="mval"><span class="tag">PMIC</span><span class="tag">Buck / boost</span><span class="tag">Battery charging</span><span class="tag">µA sleep</span></div>
+      </div>
+      <div class="mrow">
+        <div class="mkey">Tools / Process</div>
+        <div class="mval"><span class="tag">Proteus</span><span class="tag">KiCad</span><span class="tag">CadQuery</span><span class="tag">Logic analysis</span><span class="tag">DFM</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section alt" id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="reveal">
+        <span class="idx">04 / HOW WE WORK</span>
+        <h2>From constraint to manufacturable design</h2>
+      </div>
+      <p class="lede reveal">A sequence, not a scramble. Every stage produces something you can review before we move to the next.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step reveal"><div class="step-n">01</div><div class="step-body"><h3>Scope</h3><p>We map the product, its constraints, and the real risks before drawing a single trace — so nothing expensive surprises us in month three.</p></div></div>
+      <div class="step reveal"><div class="step-n">02</div><div class="step-body"><h3>Architect</h3><p>Hardware block diagram, MCU and power selection, and firmware structure — decided together, because they constrain each other.</p></div></div>
+      <div class="step reveal"><div class="step-n">03</div><div class="step-body"><h3>Build</h3><p>Schematic, layout, and firmware developed in parallel so that bring-up is a formality, not a fire drill.</p></div></div>
+      <div class="step reveal"><div class="step-n">04</div><div class="step-body"><h3>Bring-up &amp; test</h3><p>Boards populated, debugged, and characterised against real targets and real signals — with the data to prove it.</p></div></div>
+      <div class="step reveal"><div class="step-n">05</div><div class="step-body"><h3>Handoff</h3><p>Manufacturable design files, documentation, and firmware — packaged so your team, or your CM, can take it and scale.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STUDIO / LOCATIONS -->
+<section class="section" id="studio">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="reveal">
+        <span class="idx">05 / STUDIO</span>
+        <h2>A distributed studio, on your clock</h2>
+      </div>
+    </div>
+    <p class="loc-lede reveal">People and points of contact across four time zones — so your project keeps moving while you sleep, and there's someone in a nearby hour when you need to talk.</p>
+
+    <div class="loc-grid">
+      <div class="loc hq reveal">
+        <div class="loc-role"><span class="led" style="width:6px;height:6px"></span>HQ · Engineering</div>
+        <div class="loc-city">Lahore</div>
+        <div class="loc-country">PK — Pakistan</div>
+        <div class="loc-addr">Design &amp; firmware lab<br>[ Street address ]</div>
+        <div class="loc-tz mono">PKT · UTC+5</div>
+      </div>
+      <div class="loc reveal">
+        <div class="loc-role">Local contact</div>
+        <div class="loc-city">Sydney</div>
+        <div class="loc-country">AU — Australia</div>
+        <div class="loc-addr">[ Street address ]<br>[ Suburb, NSW ]</div>
+        <div class="loc-tz mono">AEDT · UTC+11</div>
+      </div>
+      <div class="loc reveal">
+        <div class="loc-role">Local contact</div>
+        <div class="loc-city">Berlin</div>
+        <div class="loc-country">DE — Germany</div>
+        <div class="loc-addr">[ Straße + Nr. ]<br>[ Berlin ]</div>
+        <div class="loc-tz mono">CET · UTC+1</div>
+      </div>
+      <div class="loc reveal">
+        <div class="loc-role">Local contact</div>
+        <div class="loc-city">London</div>
+        <div class="loc-country">UK — England</div>
+        <div class="loc-addr">[ Street address ]<br>[ London ]</div>
+        <div class="loc-tz mono">GMT · UTC+0</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section alt" id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <span class="idx" style="font-family:var(--font-mono);color:var(--gold);letter-spacing:.18em;font-size:12px">06 / START A PROJECT</span>
+        <h2 style="margin-top:14px">Tell us what you're building.</h2>
+        <p>Send a brief — even a rough one. You'll hear back within two business days, from an engineer, not a sales bot.</p>
+        <div class="contact-direct">
+          <div class="k">Direct</div>
+          <a href="mailto:hello@copperandcode.net">hello@copperandcode.net</a>
+        </div>
+        <div class="status"><span class="led" style="width:8px;height:8px"></span>Currently booking new projects</div>
+      </div>
+
+      <div class="reveal">
+        <form id="briefForm" novalidate>
+          <!-- Honeypot: hidden from people, catches spam bots. Leave as-is. -->
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+          <div class="frow">
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@company.com" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="company">Company <span style="text-transform:none;color:#5a656a">(optional)</span></label>
+            <input type="text" id="company" name="company" placeholder="Company or project name">
+          </div>
+          <div class="field">
+            <label for="ptype">Project type</label>
+            <select id="ptype" name="ptype" required>
+              <option value="" disabled selected>Select one…</option>
+              <option>Firmware engineering</option>
+              <option>PCB / hardware design</option>
+              <option>Wireless / low-power</option>
+              <option>Sensing / medical device</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">What are you building?</label>
+            <textarea id="message" name="message" placeholder="A sentence or two about the product, the stage you're at, and what you need help with." required></textarea>
+          </div>
+          <div class="submit">
+            <button type="submit" class="btn btn-primary">Send project brief →</button>
+          </div>
+          <div class="form-note" id="formNote" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#top" class="brand"><span class="chip">Cu</span><span>Copper&nbsp;&amp;&nbsp;Code</span></a>
+        <p>An embedded systems studio for connected and medical-grade devices. Firmware, hardware, and the wireless in between.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Firmware</a></li>
+          <li><a href="#services">PCB &amp; hardware</a></li>
+          <li><a href="#services">Wireless &amp; low-power</a></li>
+          <li><a href="#services">Sensing &amp; medical</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="#work">Selected work</a></li>
+          <li><a href="#stack">Capabilities</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#studio">Locations</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@copperandcode.net">hello@copperandcode.net</a></li>
+          <li><a href="#contact">Start a project</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Copper &amp; Code. All rights reserved.</p>
+      <span class="build">build · v1.0 · lahore → sydney → berlin → london</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Nav scroll state */
+  var nav = document.getElementById('nav');
+  function onScroll(){ if(window.scrollY > 12){ nav.classList.add('scrolled'); } else { nav.classList.remove('scrolled'); } }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  /* Mobile menu */
+  var burger = document.getElementById('hamburger');
+  var links = document.getElementById('navLinks');
+  burger.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true':'false');
+  });
+  links.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){ links.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
+  });
+
+  /* Duplicate ticker content for seamless loop */
+  var ticker = document.getElementById('ticker');
+  if(ticker){ ticker.innerHTML += ticker.innerHTML; }
+
+  /* Reveal on scroll */
+  var reveals = document.querySelectorAll('.reveal');
+  if(reduce || !('IntersectionObserver' in window)){
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+    reveals.forEach(function(el){ io.observe(el); });
+  }
+
+  /* ---- Contact form -> Web3Forms ---- */
+  /* SETUP: get a free access key at https://web3forms.com — enter your inbox
+     email and the key arrives by email. Paste it below. Safe to keep public. */
+  var WEB3FORMS_ACCESS_KEY = 'YOUR-WEB3FORMS-ACCESS-KEY';
+
+  var form = document.getElementById('briefForm');
+  var note = document.getElementById('formNote');
+  var submitBtn = form ? form.querySelector('button[type="submit"]') : null;
+
+  if(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(!form.checkValidity()){ form.reportValidity(); return; }
+
+      var name = (document.getElementById('name').value || '').trim();
+      var ptype = (document.getElementById('ptype').value || '').trim();
+
+      var data = new FormData(form);
+      data.append('access_key', WEB3FORMS_ACCESS_KEY);
+      data.append('subject', 'New project brief — ' + ptype + ' — ' + name);
+      data.append('from_name', 'Copper & Code website');
+
+      note.textContent = 'Sending…';
+      if(submitBtn){ submitBtn.disabled = true; }
+
+      fetch('https://api.web3forms.com/submit', { method:'POST', body:data })
+        .then(function(r){ return r.json(); })
+        .then(function(res){
+          if(res && res.success){
+            form.reset();
+            note.textContent = 'Thanks — your brief is on its way. We\'ll reply within two business days.';
+          } else {
+            note.textContent = 'Something went wrong. Please email hello@copperandcode.net directly.';
+          }
+        })
+        .catch(function(){
+          note.textContent = 'Network error. Please email hello@copperandcode.net directly.';
+        })
+        .then(function(){ if(submitBtn){ submitBtn.disabled = false; } });
+    });
+  }
+})();
+</script>
+</body>
+</html>
