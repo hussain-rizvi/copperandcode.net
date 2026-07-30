@@ -131,7 +131,7 @@ button{font-family:inherit;cursor:pointer}
 .readout-head{display:flex;justify-content:space-between;align-items:center;padding:13px 16px;border-bottom:1px solid var(--line);font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
 .readout-head .rh-left{display:flex;align-items:center;gap:9px;color:var(--gold)}
 .readout-head .rh-right{color:#4a5459}
-.hero-readouts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line)}
+.hero-readouts{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line)}
 .led{width:8px;height:8px;border-radius:50%;background:var(--gold);position:relative}
 .led::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1px solid var(--gold);opacity:.6;animation:ping 2s ease-out infinite}
 @keyframes ping{0%{transform:scale(.7);opacity:.7}80%,100%{transform:scale(2.1);opacity:0}}
@@ -394,14 +394,15 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
         <span class="rh-right">Cu//CODE</span>
       </div>
       <div class="hero-readouts">
-        <div class="ro"><div class="k">Firmware</div><div class="v"><b>MCU</b> · MPU </div></div>
-        <div class="ro"><div class="k">PCBs</div><div class="v">Multi-layer · <b>CAD</b></div></div>
-        <div class="ro"><div class="k">Front End / Backend</div><div class="v">UI/UX<b> . Portal Integration</b></div></div>
+        <div class="ro"><div class="k">Firmware</div><div class="v">Bare-metal · RTOS · FreeRTOS · Zephyr · <b>Embedded Linux</b></div></div>
+        <div class="ro"><div class="k">PCBs</div><div class="v">Multi-layer · HDI · Altium · KiCad · <b>CAD</b></div></div>
+        <div class="ro"><div class="k">Wireless</div><div class="v">BLE · Wi-Fi · LTE-M · CAN · <b>Zigbee</b></div></div>
+        <div class="ro"><div class="k">Front / Back End</div><div class="v">React · Node.js · Python · Django · <b>Rails</b></div></div>
         <div class="ro"><div class="k">Experience</div><div class="v"><b>10+</b> years</div></div>
       </div>
     </div>
   </div>
-</header> -->
+</header>
 
 <!-- TICKER -->
 <div class="ticker" aria-hidden="true">
@@ -623,8 +624,8 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
         <div class="mval"><span class="tag">STM32 F4/L7/H5/H7</span><span class="tag">nRF52840</span><span class="tag">nRF9160</span><span class="tag">ESP32-S3</span><span class="tag">RK3566</span><span class="tag">Raspberry Pi</span></div>
       </div>
       <div class="mrow">
-        <div class="mkey">RTOS / Firmware</div>
-        <div class="mval"><span class="tag">FreeRTOS</span><span class="tag">Zephyr</span><span class="tag">Bare-metal</span><span class="tag">LVGL</span><span class="tag">Bootloaders (USB/OTA)</span></div>
+        <div class="mkey">RTOS / Firmware / Linux</div>
+        <div class="mval"><span class="tag">FreeRTOS</span><span class="tag">Zephyr</span><span class="tag">Bare-metal</span><span class="tag">LVGL</span><span class="tag">Bootloaders (USB/OTA)</span><span class="tag">Embedded Linux</span><span class="tag">Yocto / Buildroot</span><span class="tag">Kernel drivers / Device tree</span><span class="tag">Debian/Ubuntu (SBC)</span><span class="tag">systemd</span><span class="tag">Cross-compilation toolchains</span><span class="tag">ESP-IDF</span><span class="tag">Nordic NCS/SDK</span><span class="tag">STM32Cube</span><span class="tag">CMake</span><span class="tag">PlatformIO</span><span class="tag">GCC/ARM toolchain</span><span class="tag">J-Link / Ozone</span><span class="tag">GDB</span><span class="tag">Unity / Ceedling</span><span class="tag">Mbed OS</span><span class="tag">Azure RTOS / ThreadX</span></div>
       </div>
       <div class="mrow">
         <div class="mkey">Wireless &amp; buses</div>
@@ -639,8 +640,12 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
         <div class="mval"><span class="tag">AWS IoT Core</span><span class="tag">Azure</span><span class="tag">MQTT</span><span class="tag">HTTP / OTA</span></div>
       </div>
       <div class="mrow">
+        <div class="mkey">Front End &amp; Back End</div>
+        <div class="mval"><span class="tag">React / Next.js</span><span class="tag">Node.js / Express</span><span class="tag">Python</span><span class="tag">Django / FastAPI</span><span class="tag">Ruby on Rails</span><span class="tag">REST APIs</span><span class="tag">PostgreSQL / MongoDB</span></div>
+      </div>
+      <div class="mrow">
         <div class="mkey">PCB &amp; mechanical</div>
-        <div class="mval"><span class="tag">Altium</span><span class="tag">Proteus</span><span class="tag">Board bring-up</span><span class="tag">SolidWorks</span></div>
+        <div class="mval"><span class="tag">Altium</span><span class="tag">Proteus</span><span class="tag">Board bring-up</span><span class="tag">SolidWorks</span><span class="tag">KiCad</span><span class="tag">Eagle</span><span class="tag">OrCAD / Cadence Allegro</span><span class="tag">Fusion 360</span><span class="tag">Inventor</span></div>
       </div>
       <div class="mrow">
         <div class="mkey">Security</div>
