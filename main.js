@@ -64,11 +64,11 @@
             if(typeof onReset === 'function'){ onReset(); }
             if(note){ note.textContent = form.getAttribute('data-success') || 'Thanks — your message is on its way.'; }
           } else if(note){
-            note.textContent = 'Something went wrong. Please email hello@copperandcode.net directly.';
+            note.textContent = 'Something went wrong. Please email contact@copperandcode.net directly.';
           }
         })
         .catch(function(){
-          if(note){ note.textContent = 'Network error. Please email hello@copperandcode.net directly.'; }
+          if(note){ note.textContent = 'Network error. Please email contact@copperandcode.net directly.'; }
         })
         .then(function(){ if(submitBtn){ submitBtn.disabled = false; } });
     });
