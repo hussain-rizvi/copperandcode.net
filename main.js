@@ -39,7 +39,7 @@
   /* SETUP: get a free access key at https://web3forms.com — enter your inbox
      email and the key arrives by email. Paste it below (used by both forms).
      Safe to keep in public code. */
-  var WEB3FORMS_ACCESS_KEY = 'YOUR-WEB3FORMS-ACCESS-KEY';
+  var WEB3FORMS_ACCESS_KEY = '640ca795-4932-4505-8c1e-f373ad97ccc7';
 
   function wireForm(form, note, buildSubject, onReset){
     if(!form){ return; }
