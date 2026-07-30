@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Copper &amp; Code — Embedded Systems Studio</title>
-<meta name="description" content="A compact embedded studio building firmware, PCBs, and low-power wireless for connected and medical-grade devices — from first schematic to a design that manufactures.">
+<title>Copper &amp; Code — Embedded Systems &amp; Firmware Studio</title>
+<meta name="description" content="A founder-led embedded studio with 10+ years shipping microcontroller products end to end — firmware, multi-layer PCBs, and low-power wireless across medical, industrial, and connected devices.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -246,6 +246,58 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
 .submit .btn-primary{width:100%;justify-content:center;padding:15px;font-size:14px}
 .form-note{font-family:var(--font-mono);font-size:12px;color:var(--gold);min-height:18px;letter-spacing:.03em}
 
+/* ---------- WORK LINK CUE ---------- */
+.work-open{margin-top:2px;font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mist);display:flex;align-items:center;gap:6px;transition:color .25s ease,gap .25s ease}
+.work:hover .work-open{color:var(--gold);gap:10px}
+
+/* ---------- STATS ---------- */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:38px}
+.stat{background:var(--panel);padding:24px 22px}
+.stat .num{font-family:var(--font-display);font-weight:800;font-size:clamp(1.5rem,2.4vw,2rem);color:var(--gold);letter-spacing:-.01em;line-height:1}
+.stat .lbl{font-family:var(--font-mono);font-size:11px;color:var(--mist);letter-spacing:.08em;text-transform:uppercase;margin-top:10px;line-height:1.4}
+
+/* ---------- EXPERIENCE ---------- */
+.xp-intro{color:var(--mist-2);max-width:64ch;font-size:1.05rem;margin-bottom:34px}
+.xp{border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.xp-row{display:grid;grid-template-columns:250px 1fr;border-bottom:1px solid var(--line);background:var(--panel);transition:background .25s ease}
+.xp-row:last-child{border-bottom:none}
+.xp-row:hover{background:var(--panel-2)}
+.xp-left{padding:24px;border-right:1px solid var(--line)}
+.xp-when{font-family:var(--font-mono);font-size:11px;color:var(--gold);letter-spacing:.06em}
+.xp-co{font-family:var(--font-display);font-weight:700;font-size:1.05rem;margin-top:7px;line-height:1.25}
+.xp-right{padding:24px}
+.xp-role{font-family:var(--font-mono);font-size:12px;color:var(--paper);letter-spacing:.03em;margin-bottom:8px}
+.xp-right p{color:var(--mist-2);font-size:.95rem;max-width:64ch}
+.xp-edu{margin-top:24px;font-family:var(--font-mono);font-size:12px;color:var(--mist);letter-spacing:.03em;line-height:1.7}
+.xp-edu b{color:var(--gold);font-weight:500}
+
+/* ---------- TESTIMONIALS ---------- */
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:54px}
+.quote{border:1px solid var(--line);border-radius:14px;background:var(--panel);padding:28px;display:flex;flex-direction:column;gap:18px;transition:border-color .25s ease}
+.quote:hover{border-color:var(--gold-line)}
+.quote-stars{color:var(--gold);font-size:14px;letter-spacing:3px}
+.quote p{color:var(--paper);font-size:1rem;line-height:1.6;flex:1}
+.quote-by{border-top:1px solid var(--line);padding-top:16px}
+.quote-name{font-family:var(--font-display);font-weight:700;font-size:1rem}
+.quote-role{font-family:var(--font-mono);font-size:11px;color:var(--mist);letter-spacing:.05em;margin-top:4px}
+
+/* ---------- FEEDBACK FORM ---------- */
+.feedback-form{border:1px solid var(--line);border-radius:14px;background:var(--panel);padding:clamp(26px,4vw,42px);max-width:740px;margin:0 auto}
+.fb-head{margin-bottom:24px}
+.fb-head h3{font-family:var(--font-display);font-weight:700;font-size:1.5rem;letter-spacing:-.01em}
+.fb-head p{color:var(--mist-2);margin-top:9px;font-size:.95rem;max-width:52ch}
+.stars{display:flex;gap:8px}
+.star{width:38px;height:38px;border:1px solid var(--line-2);border-radius:8px;background:var(--panel-2);color:#3a444a;font-size:17px;display:grid;place-items:center;transition:.15s ease}
+.star:hover{border-color:var(--gold-line);color:var(--gold-2)}
+.star.on{color:var(--gold);border-color:var(--gold-line);background:var(--gold-soft)}
+
+@media(max-width:900px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .quotes{grid-template-columns:1fr}
+  .xp-row{grid-template-columns:1fr}
+  .xp-left{border-right:none;border-bottom:1px solid var(--line)}
+}
+
 /* ---------- FOOTER ---------- */
 .footer{border-top:1px solid var(--line);padding:60px 0 40px;background:var(--ink-2);position:relative;z-index:1}
 .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
@@ -310,9 +362,9 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
     <div class="nav-links" id="navLinks">
       <a href="#services">Services</a>
       <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
       <a href="#stack">Stack</a>
-      <a href="#process">Process</a>
-      <a href="#studio">Studio</a>
+      <a href="#feedback">Feedback</a>
     </div>
     <div class="nav-cta">
       <a href="#contact" class="btn btn-ghost">hello@copperandcode.net</a>
@@ -329,7 +381,7 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
   <div class="wrap">
     <div class="eyebrow hero-eyebrow reveal">Firmware · Hardware · Low-power wireless</div>
     <h1 class="reveal">Embedded engineering for products that <em>have to work.</em></h1>
-    <p class="hero-sub reveal">Copper &amp; Code is a compact embedded studio building firmware, PCBs, and low-power wireless for connected and medical-grade devices — from the first schematic to a design that manufactures.</p>
+    <p class="hero-sub reveal">Copper &amp; Code is a founder-led embedded studio with 10+ years shipping microcontroller products end to end — firmware, multi-layer PCBs, and low-power wireless across medical, industrial, and connected devices.</p>
     <div class="hero-actions reveal">
       <a href="#contact" class="btn btn-primary">Start a project →</a>
       <a href="#work" class="btn btn-ghost">See selected work</a>
@@ -342,10 +394,10 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
         <span class="rh-right">Cu//CODE</span>
       </div>
       <div class="hero-readouts">
-        <div class="ro"><div class="k">Firmware</div><div class="v"><b>nRF52</b> · ESP32 · STM32</div></div>
-        <div class="ro"><div class="k">Wireless</div><div class="v">BLE 5.x · Wi-Fi · <b>LTE</b></div></div>
-        <div class="ro"><div class="k">Sensing</div><div class="v">PPG · ECG · <b>NIR</b></div></div>
-        <div class="ro"><div class="k">Coverage</div><div class="v"><b>4</b> time zones</div></div>
+        <div class="ro"><div class="k">Firmware</div><div class="v"><b>STM32</b> · nRF52 · ESP32</div></div>
+        <div class="ro"><div class="k">Wireless</div><div class="v">BLE · Wi-Fi · <b>LTE</b> · CAN</div></div>
+        <div class="ro"><div class="k">Sensing</div><div class="v">ECG · SpO₂ · <b>CGM</b></div></div>
+        <div class="ro"><div class="k">Experience</div><div class="v"><b>10+</b> years</div></div>
       </div>
     </div>
   </div>
@@ -415,100 +467,199 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
         <span class="idx">02 / SELECTED WORK</span>
         <h2>A track record in hard problems</h2>
       </div>
-      <p class="lede reveal">Device classes we've taken from concept to working hardware. Client names withheld under NDA — the engineering speaks for itself.</p>
+      <p class="lede reveal">Real projects across medical, industrial, and consumer domains. Each card opens in a new tab — described by sector, with client names kept for conversation.</p>
     </div>
 
     <div class="work-grid">
-      <article class="work reveal">
+      <!-- Replace href="#" with this project's link (GitHub, live demo, PDF case study, or product page) -->
+      <a class="work reveal" href="#" target="_blank" rel="noopener noreferrer">
         <div class="work-media">
-          <span class="media-hint">Drop photo at<br>images/ecg-patch.jpg</span>
-          <img src="images/ecg-patch.jpg" alt="Cellular ECG patch prototype" loading="lazy" onerror="this.style.display='none'">
+          <span class="media-hint">Drop photo at<br>images/medical-monitoring.jpg</span>
+          <img src="images/medical-monitoring.jpg" alt="Wireless vital-sign monitoring device" loading="lazy" onerror="this.style.display='none'">
         </div>
-        <div class="work-meta"><span><span class="dot"></span>Medical wearable</span><span>LTE · ECG</span></div>
-        <h3>Cellular ECG patch</h3>
-        <p>A 4G-connected wearable streaming clinical-grade ECG. We designed the power tree to survive a 2&nbsp;A modem peak on a tight battery budget, and the firmware to keep the link alive in the field.</p>
-        <div class="tags"><span class="tag">Cellular modem</span><span class="tag">ECG AFE</span><span class="tag">Power design</span></div>
-      </article>
-      <article class="work reveal">
+        <div class="work-meta"><span><span class="dot"></span>Medical wearables</span><span>nRF52 · STM32</span></div>
+        <h3>Wireless vital-sign monitoring</h3>
+        <p>Non-invasive monitoring of ECG, blood pressure, SpO₂, and continuous glucose across patch and ring form factors — including a 5-lead ECG patch with cloud publishing and offline logging, and AI-based cuffless blood-pressure estimation running on a coin cell.</p>
+        <div class="tags"><span class="tag">ECG · SpO₂</span><span class="tag">Cuffless BP</span><span class="tag">CGM</span><span class="tag">Coin-cell power</span></div>
+        <div class="work-open">View project ↗</div>
+      </a>
+      <!-- Replace href="#" with this project's link -->
+      <a class="work reveal" href="#" target="_blank" rel="noopener noreferrer">
         <div class="work-media">
-          <span class="media-hint">Drop photo at<br>images/smart-ring.jpg</span>
-          <img src="images/smart-ring.jpg" alt="Smart health ring PCB" loading="lazy" onerror="this.style.display='none'">
+          <span class="media-hint">Drop photo at<br>images/pyro-system.jpg</span>
+          <img src="images/pyro-system.jpg" alt="Wireless pyrotechnics firing system" loading="lazy" onerror="this.style.display='none'">
         </div>
-        <div class="work-meta"><span><span class="dot"></span>Wearable sensing</span><span>PPG · ECG</span></div>
-        <h3>Smart health ring</h3>
-        <p>Continuous PPG, ECG, and motion in a ring form factor. Fine-pitch WLCSP layout with via-in-pad on an HDI stack-up, paired with a sensing front end for clean biosignals off the finger.</p>
-        <div class="tags"><span class="tag">PPG / ECG</span><span class="tag">WLCSP</span><span class="tag">HDI PCB</span></div>
-      </article>
-      <article class="work reveal">
+        <div class="work-meta"><span><span class="dot"></span>Event technology</span><span>DSP · Wireless</span></div>
+        <h3>Pro pyrotechnics firing system</h3>
+        <p>A wireless firing system driving 400+ modules and thousands of cues for manual and script-based pyro and DMX shows, with a DSP pipeline decoding FSK/SMPTE audio timecode to lock every cue to a live soundtrack — plus an LVGL touchscreen UI and end-to-end encryption.</p>
+        <div class="tags"><span class="tag">FSK/SMPTE DSP</span><span class="tag">LVGL UI</span><span class="tag">E2E encryption</span><span class="tag">USB bootloader</span></div>
+        <div class="work-open">View project ↗</div>
+      </a>
+      <!-- Replace href="#" with this project's link -->
+      <a class="work reveal" href="#" target="_blank" rel="noopener noreferrer">
         <div class="work-media">
-          <span class="media-hint">Drop photo at<br>images/pbm-patch.jpg</span>
-          <img src="images/pbm-patch.jpg" alt="Photobiomodulation LED patch" loading="lazy" onerror="this.style.display='none'">
+          <span class="media-hint">Drop photo at<br>images/crypto-wallet.jpg</span>
+          <img src="images/crypto-wallet.jpg" alt="Cryptocurrency hardware wallet" loading="lazy" onerror="this.style.display='none'">
         </div>
-        <div class="work-meta"><span><span class="dot"></span>Therapeutic device</span><span>NIR · Thermal</span></div>
-        <h3>Photobiomodulation patch</h3>
-        <p>A 36-LED near-infrared therapy wearable with brutal thermal and power constraints. We used PWM duty-cycling and a boost topology to keep it effective and still comfortable to wear.</p>
-        <div class="tags"><span class="tag">LED drivers</span><span class="tag">Thermal budget</span><span class="tag">Boost converter</span></div>
-      </article>
-      <article class="work reveal">
+        <div class="work-meta"><span><span class="dot"></span>Fintech security</span><span>STM32 · C</span></div>
+        <h3>Cryptocurrency hardware wallet</h3>
+        <p>A secure hardware wallet integrating multiple top cryptocurrencies, with address generation, key derivation, and transaction signing written in C straight from the protocol white papers — hardened against tampering and encrypted end-to-end to its desktop companion app.</p>
+        <div class="tags"><span class="tag">Key management</span><span class="tag">E2E encryption</span><span class="tag">STM32F4</span><span class="tag">Node.js app</span></div>
+        <div class="work-open">View project ↗</div>
+      </a>
+      <!-- Replace href="#" with this project's link -->
+      <a class="work reveal" href="#" target="_blank" rel="noopener noreferrer">
         <div class="work-media">
-          <span class="media-hint">Drop photo at<br>images/pill-dispenser.jpg</span>
-          <img src="images/pill-dispenser.jpg" alt="Automated pill dispenser device" loading="lazy" onerror="this.style.display='none'">
+          <span class="media-hint">Drop photo at<br>images/digital-nose.jpg</span>
+          <img src="images/digital-nose.jpg" alt="Air-quality and odor sensing node" loading="lazy" onerror="this.style.display='none'">
         </div>
-        <div class="work-meta"><span><span class="dot"></span>Connected product</span><span>ESP32 · BLE</span></div>
-        <h3>Automated pill dispenser</h3>
-        <p>An ESP32-based device that sorts and dispenses medication on schedule, controlled over BLE. Motion control, sensing, and a phone app talking to firmware that doesn't miss a dose.</p>
-        <div class="tags"><span class="tag">ESP32</span><span class="tag">Motion control</span><span class="tag">BLE app link</span></div>
-      </article>
+        <div class="work-meta"><span><span class="dot"></span>Environmental sensing</span><span>AWS IoT</span></div>
+        <h3>Digital nose — air quality &amp; odor</h3>
+        <p>A battery-optimized sensor node capturing air-quality and odor signatures over SPI/I²C and publishing to AWS IoT. FreeRTOS coordinated sensing, health, and Wi-Fi — waking the radio only to publish — with OTA updates handled in the bootloader.</p>
+        <div class="tags"><span class="tag">FreeRTOS</span><span class="tag">AWS IoT</span><span class="tag">OTA updates</span><span class="tag">Low-power</span></div>
+        <div class="work-open">View project ↗</div>
+      </a>
+      <!-- Replace href="#" with this project's link -->
+      <a class="work reveal" href="#" target="_blank" rel="noopener noreferrer">
+        <div class="work-media">
+          <span class="media-hint">Drop photo at<br>images/patient-bed.jpg</span>
+          <img src="images/patient-bed.jpg" alt="Smart patient bed sensor system" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="work-meta"><span><span class="dot"></span>Medical monitoring</span><span>CAN · BLE</span></div>
+        <h3>Smart patient bed</h3>
+        <p>400+ sensors — temperature, humidity, pressure, motion — networked over inter-board CAN on STM32 in C++, with BLE and SD-card logging for live streaming and local backup, and results pushed to the cloud.</p>
+        <div class="tags"><span class="tag">400+ sensors</span><span class="tag">CAN bus</span><span class="tag">BLE</span><span class="tag">C++</span></div>
+        <div class="work-open">View project ↗</div>
+      </a>
+      <!-- Replace href="#" with this project's link -->
+      <a class="work reveal" href="#" target="_blank" rel="noopener noreferrer">
+        <div class="work-media">
+          <span class="media-hint">Drop photo at<br>images/audio-boards.jpg</span>
+          <img src="images/audio-boards.jpg" alt="Pro audio and video boards" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="work-meta"><span><span class="dot"></span>Pro-audio &amp; video</span><span>STM32 · RK3566</span></div>
+        <h3>Pro audio &amp; video boards</h3>
+        <p>Production audio boards on STM32 with USB, analog, and Bluetooth-speaker inputs, running a single field-configurable binary across board variants — plus RK3566-based video boards with a smart watchdog for reliable 24/7 showroom operation.</p>
+        <div class="tags"><span class="tag">USB Audio</span><span class="tag">Bluetooth audio</span><span class="tag">RK3566</span><span class="tag">Watchdog</span></div>
+        <div class="work-open">View project ↗</div>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- STACK -->
-<section class="section" id="stack">
+<!-- EXPERIENCE -->
+<section class="section" id="experience">
   <div class="wrap">
     <div class="sec-head">
       <div class="reveal">
-        <span class="idx">03 / CAPABILITIES</span>
-        <h2>The stack we reach for</h2>
+        <span class="idx">03 / EXPERIENCE</span>
+        <h2>Ten years, from bare metal to production</h2>
       </div>
-      <p class="lede reveal">Silicon, tooling, and standards we work with day to day. If it's connected, low-power, or measures a body, it's probably in here.</p>
+      <p class="lede reveal">Team — a decade taking microcontroller products end to end, across medical, industrial, and consumer domains.</p>
+    </div>
+
+    <div class="stats reveal">
+      <div class="stat"><div class="num">10+</div><div class="lbl">Years in embedded</div></div>
+      <div class="stat"><div class="num">3</div><div class="lbl">Domains — medical, industrial, consumer</div></div>
+      <div class="stat"><div class="num">US · CA · EU</div><div class="lbl">Clients served remotely</div></div>
+      <div class="stat"><div class="num">FDA</div><div class="lbl">Cleared devices delivered</div></div>
+    </div>
+
+    <p class="xp-intro reveal">Schematic and multi-layer PCB, bare-metal and RTOS firmware, wireless connectivity, and cloud integration — with a focus on low-power medical wearables and safety-critical devices. Delivered FDA-cleared patient-monitoring systems, secure cryptocurrency hardware wallets, and connected IoT products for clients across the US, Canada, and Europe.</p>
+
+    <div class="xp reveal">
+      <div class="xp-row">
+        <div class="xp-left"><div class="xp-when">2024 — Present</div><div class="xp-co">Medical devices · USA (remote)</div></div>
+        <div class="xp-right"><div class="xp-role">Senior Embedded Systems Engineer</div><p>FDA-cleared continuous patient-monitoring devices taken from scratch to production, integrated with backend servers and a physician-facing portal; R&amp;D on non-invasive vital-sign monitoring.</p></div>
+      </div>
+      <div class="xp-row">
+        <div class="xp-left"><div class="xp-when">2023 — 2024</div><div class="xp-co">Pro-audio &amp; entertainment · Canada</div></div>
+        <div class="xp-right"><div class="xp-role">Embedded Systems Engineer</div><p>Proprietary audio boards and BLE products on STM32 and nRF52840 — USB/analog/S-PDIF audio, a motorized Lift-TV, a BLE exercise device, and large BLE displays.</p></div>
+      </div>
+      <div class="xp-row">
+        <div class="xp-left"><div class="xp-when">2023</div><div class="xp-co">Environmental sensing · Contract</div></div>
+        <div class="xp-right"><div class="xp-role">Senior Firmware Architect</div><p>A battery-optimized “digital nose” measuring air quality and odor signatures, publishing to AWS IoT on an STM32L7 with an ESP32 for connectivity.</p></div>
+      </div>
+      <div class="xp-row">
+        <div class="xp-left"><div class="xp-when">2022 — 2023</div><div class="xp-co">Pro pyrotechnics · USA</div></div>
+        <div class="xp-right"><div class="xp-role">Senior Embedded Systems Engineer</div><p>Proprietary wireless firing modules for the professional pyrotechnics industry, with timecode-synchronized show control and end-to-end encryption.</p></div>
+      </div>
+      <div class="xp-row">
+        <div class="xp-left"><div class="xp-when">2020 — 2022</div><div class="xp-co">Defense · Public sector</div></div>
+        <div class="xp-right"><div class="xp-role">Engineering Manager</div><p>Led embedded-systems integration and mechanical development for indigenous defense programs, including field integration of GNSS and IMU subsystems.</p></div>
+      </div>
+      <div class="xp-row">
+        <div class="xp-left"><div class="xp-when">2019 — 2020</div><div class="xp-co">Medical monitoring · Canada</div></div>
+        <div class="xp-right"><div class="xp-role">Embedded Engineer</div><p>Firmware in C/C++ for a smart patient bed networking 400+ sensors over CAN, from requirements through commercial deployment and post-production support.</p></div>
+      </div>
+      <div class="xp-row">
+        <div class="xp-left"><div class="xp-when">2017 — 2019</div><div class="xp-co">Fintech security</div></div>
+        <div class="xp-right"><div class="xp-role">Embedded Engineer</div><p>Secure cryptocurrency hardware-wallet firmware on STM32F4 with a desktop companion app — key derivation, transaction signing, and end-to-end encryption, hardened against attack.</p></div>
+      </div>
+      <div class="xp-row">
+        <div class="xp-left"><div class="xp-when">2016 — 2017</div><div class="xp-co">Industrial IoT</div></div>
+        <div class="xp-right"><div class="xp-role">Embedded Developer</div><p>DigiMesh sensor networks aggregating to a Raspberry Pi gateway, in Python — deployed across machinery in Europe and the Americas, with cloud reporting.</p></div>
+      </div>
+    </div>
+
+    <p class="xp-edu reveal"><b>Education</b> — B.E. Mechatronics, Air University · M.Sc. Mechatronics &amp; Control Engineering (coursework), UET Lahore</p>
+  </div>
+</section>
+
+<!-- STACK -->
+<section class="section alt" id="stack">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="reveal">
+        <span class="idx">04 / CAPABILITIES</span>
+        <h2>The stack I reach for</h2>
+      </div>
+      <p class="lede reveal">Silicon, tooling, and standards from a decade of shipping — spanning MCUs, wireless, sensing, power, and the cloud behind them.</p>
     </div>
 
     <div class="matrix reveal">
       <div class="mrow">
         <div class="mkey">Microcontrollers</div>
-        <div class="mval"><span class="tag">nRF52840</span><span class="tag">nRF52832</span><span class="tag">ESP32-S3</span><span class="tag">ESP32-PICO</span><span class="tag">STM32</span></div>
+        <div class="mval"><span class="tag">STM32 F4/L7/H5/H7</span><span class="tag">nRF52840</span><span class="tag">nRF9160</span><span class="tag">ESP32-S3</span><span class="tag">RK3566</span><span class="tag">Raspberry Pi</span></div>
       </div>
       <div class="mrow">
-        <div class="mkey">RTOS / SDK</div>
-        <div class="mval"><span class="tag">Zephyr</span><span class="tag">nRF Connect SDK</span><span class="tag">FreeRTOS</span><span class="tag">ESP-IDF</span></div>
+        <div class="mkey">RTOS / Firmware</div>
+        <div class="mval"><span class="tag">FreeRTOS</span><span class="tag">Zephyr</span><span class="tag">Bare-metal</span><span class="tag">LVGL</span><span class="tag">Bootloaders (USB/OTA)</span></div>
       </div>
       <div class="mrow">
-        <div class="mkey">Wireless</div>
-        <div class="mval"><span class="tag">BLE 5.x</span><span class="tag">Wi-Fi</span><span class="tag">LTE Cat-M / NB</span><span class="tag">GNSS</span></div>
+        <div class="mkey">Wireless &amp; buses</div>
+        <div class="mval"><span class="tag">BLE</span><span class="tag">Wi-Fi</span><span class="tag">LTE / LTE-M</span><span class="tag">CAN</span><span class="tag">Zigbee / DigiMesh</span><span class="tag">USB (CDC/MSC/Audio)</span></div>
       </div>
       <div class="mrow">
-        <div class="mkey">Sensing / AFE</div>
-        <div class="mval"><span class="tag">PPG</span><span class="tag">ECG</span><span class="tag">SpO₂</span><span class="tag">NIR optical</span><span class="tag">Biopotential</span></div>
+        <div class="mkey">Sensing &amp; signal</div>
+        <div class="mval"><span class="tag">ECG</span><span class="tag">SpO₂</span><span class="tag">Cuffless BP</span><span class="tag">CGM</span><span class="tag">DSP (FSK/SMPTE)</span></div>
       </div>
       <div class="mrow">
-        <div class="mkey">Power</div>
-        <div class="mval"><span class="tag">PMIC</span><span class="tag">Buck / boost</span><span class="tag">Battery charging</span><span class="tag">µA sleep</span></div>
+        <div class="mkey">Cloud &amp; IoT</div>
+        <div class="mval"><span class="tag">AWS IoT Core</span><span class="tag">Azure</span><span class="tag">MQTT</span><span class="tag">HTTP / OTA</span></div>
       </div>
       <div class="mrow">
-        <div class="mkey">Tools / Process</div>
-        <div class="mval"><span class="tag">Proteus</span><span class="tag">KiCad</span><span class="tag">CadQuery</span><span class="tag">Logic analysis</span><span class="tag">DFM</span></div>
+        <div class="mkey">PCB &amp; mechanical</div>
+        <div class="mval"><span class="tag">Altium</span><span class="tag">Proteus</span><span class="tag">Board bring-up</span><span class="tag">SolidWorks</span></div>
+      </div>
+      <div class="mrow">
+        <div class="mkey">Security</div>
+        <div class="mval"><span class="tag">Key management</span><span class="tag">E2E encryption</span><span class="tag">Secure firmware</span></div>
+      </div>
+      <div class="mrow">
+        <div class="mkey">Languages</div>
+        <div class="mval"><span class="tag">C</span><span class="tag">C++</span><span class="tag">Python</span><span class="tag">MATLAB / Simulink</span><span class="tag">Node.js</span></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- PROCESS -->
-<section class="section alt" id="process">
+<section class="section" id="process">
   <div class="wrap">
     <div class="sec-head">
       <div class="reveal">
-        <span class="idx">04 / HOW WE WORK</span>
+        <span class="idx">05 / HOW WE WORK</span>
         <h2>From constraint to manufacturable design</h2>
       </div>
       <p class="lede reveal">A sequence, not a scramble. Every stage produces something you can review before we move to the next.</p>
@@ -525,11 +676,11 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
 </section>
 
 <!-- STUDIO / LOCATIONS -->
-<section class="section" id="studio">
+<section class="section alt" id="studio">
   <div class="wrap">
     <div class="sec-head">
       <div class="reveal">
-        <span class="idx">05 / STUDIO</span>
+        <span class="idx">06 / STUDIO</span>
         <h2>A distributed studio, on your clock</h2>
       </div>
     </div>
@@ -568,12 +719,92 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
   </div>
 </section>
 
+<!-- CLIENT FEEDBACK -->
+<section class="section" id="feedback">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="reveal">
+        <span class="idx">07 / CLIENT FEEDBACK</span>
+        <h2>What clients say — and your turn to weigh in</h2>
+      </div>
+      <p class="lede reveal">Feedback from teams I've built for. Worked with me before? Add yours below — the ones I feature land right here.</p>
+    </div>
+
+    <div class="quotes">
+      <div class="quote reveal">
+        <div class="quote-stars">★★★★★</div>
+        <p>[ Replace with a real client quote — what you built for them and how the project went. Keep it to two or three sentences. ]</p>
+        <div class="quote-by">
+          <div class="quote-name">Client name</div>
+          <div class="quote-role">Role · Company</div>
+        </div>
+      </div>
+      <div class="quote reveal">
+        <div class="quote-stars">★★★★★</div>
+        <p>[ Replace with a second client quote. Specific results — “shipped on time”, “passed certification”, “battery life doubled” — land best. ]</p>
+        <div class="quote-by">
+          <div class="quote-name">Client name</div>
+          <div class="quote-role">Role · Company</div>
+        </div>
+      </div>
+      <div class="quote reveal">
+        <div class="quote-stars">★★★★★</div>
+        <p>[ Replace with a third client quote. A short line about working style or communication works well here. ]</p>
+        <div class="quote-by">
+          <div class="quote-name">Client name</div>
+          <div class="quote-role">Role · Company</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feedback-form reveal">
+      <div class="fb-head">
+        <h3>Share your experience</h3>
+        <p>A few words on the project and how it went. Submitting sends it straight to me — I'll always ask before featuring it on the site.</p>
+      </div>
+      <form id="feedbackForm" novalidate data-success="Thank you for the feedback — it genuinely means a lot.">
+        <!-- Honeypot: hidden from people, catches spam bots. Leave as-is. -->
+        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+        <input type="hidden" id="fb-rating" name="rating" value="">
+        <div class="frow">
+          <div class="field">
+            <label for="fb-name">Name</label>
+            <input type="text" id="fb-name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="field">
+            <label for="fb-role">Role &amp; company</label>
+            <input type="text" id="fb-role" name="company" placeholder="e.g. CTO, Acme Devices">
+          </div>
+        </div>
+        <div class="field">
+          <label>Rating</label>
+          <div class="stars" id="stars" role="group" aria-label="Rating out of 5">
+            <button type="button" class="star" data-v="1" aria-label="1 star">★</button>
+            <button type="button" class="star" data-v="2" aria-label="2 stars">★</button>
+            <button type="button" class="star" data-v="3" aria-label="3 stars">★</button>
+            <button type="button" class="star" data-v="4" aria-label="4 stars">★</button>
+            <button type="button" class="star" data-v="5" aria-label="5 stars">★</button>
+          </div>
+        </div>
+        <div class="field">
+          <label for="fb-message">Your feedback</label>
+          <textarea id="fb-message" name="message" placeholder="What did we build, and how was it to work together?" required></textarea>
+        </div>
+        <div class="submit">
+          <button type="submit" class="btn btn-primary">Send feedback →</button>
+        </div>
+        <div class="form-note" id="fbNote" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section class="section alt" id="contact">
   <div class="wrap">
     <div class="contact-grid">
       <div class="contact-info reveal">
-        <span class="idx" style="font-family:var(--font-mono);color:var(--gold);letter-spacing:.18em;font-size:12px">06 / START A PROJECT</span>
+        <span class="idx" style="font-family:var(--font-mono);color:var(--gold);letter-spacing:.18em;font-size:12px">08 / START A PROJECT</span>
         <h2 style="margin-top:14px">Tell us what you're building.</h2>
         <p>Send a brief — even a rough one. You'll hear back within two business days, from an engineer, not a sales bot.</p>
         <div class="contact-direct">
@@ -647,15 +878,16 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
         <h4>Studio</h4>
         <ul>
           <li><a href="#work">Selected work</a></li>
+          <li><a href="#experience">Experience</a></li>
           <li><a href="#stack">Capabilities</a></li>
-          <li><a href="#process">Process</a></li>
-          <li><a href="#studio">Locations</a></li>
+          <li><a href="#feedback">Client feedback</a></li>
         </ul>
       </div>
       <div>
         <h4>Contact</h4>
         <ul>
           <li><a href="mailto:hello@copperandcode.net">hello@copperandcode.net</a></li>
+          <li><a href="#studio">Locations</a></li>
           <li><a href="#contact">Start a project</a></li>
         </ul>
       </div>
@@ -705,29 +937,25 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
     reveals.forEach(function(el){ io.observe(el); });
   }
 
-  /* ---- Contact form -> Web3Forms ---- */
+  /* ---- Forms -> Web3Forms ---- */
   /* SETUP: get a free access key at https://web3forms.com — enter your inbox
-     email and the key arrives by email. Paste it below. Safe to keep public. */
+     email and the key arrives by email. Paste it below (used by both forms).
+     Safe to keep in public code. */
   var WEB3FORMS_ACCESS_KEY = 'YOUR-WEB3FORMS-ACCESS-KEY';
 
-  var form = document.getElementById('briefForm');
-  var note = document.getElementById('formNote');
-  var submitBtn = form ? form.querySelector('button[type="submit"]') : null;
-
-  if(form){
+  function wireForm(form, note, buildSubject, onReset){
+    if(!form){ return; }
+    var submitBtn = form.querySelector('button[type="submit"]');
     form.addEventListener('submit', function(e){
       e.preventDefault();
       if(!form.checkValidity()){ form.reportValidity(); return; }
 
-      var name = (document.getElementById('name').value || '').trim();
-      var ptype = (document.getElementById('ptype').value || '').trim();
-
       var data = new FormData(form);
       data.append('access_key', WEB3FORMS_ACCESS_KEY);
-      data.append('subject', 'New project brief — ' + ptype + ' — ' + name);
+      data.append('subject', buildSubject());
       data.append('from_name', 'Copper & Code website');
 
-      note.textContent = 'Sending…';
+      if(note){ note.textContent = 'Sending…'; }
       if(submitBtn){ submitBtn.disabled = true; }
 
       fetch('https://api.web3forms.com/submit', { method:'POST', body:data })
@@ -735,17 +963,60 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
         .then(function(res){
           if(res && res.success){
             form.reset();
-            note.textContent = 'Thanks — your brief is on its way. We\'ll reply within two business days.';
-          } else {
+            if(typeof onReset === 'function'){ onReset(); }
+            if(note){ note.textContent = form.getAttribute('data-success') || 'Thanks — your message is on its way.'; }
+          } else if(note){
             note.textContent = 'Something went wrong. Please email hello@copperandcode.net directly.';
           }
         })
         .catch(function(){
-          note.textContent = 'Network error. Please email hello@copperandcode.net directly.';
+          if(note){ note.textContent = 'Network error. Please email hello@copperandcode.net directly.'; }
         })
         .then(function(){ if(submitBtn){ submitBtn.disabled = false; } });
     });
   }
+
+  /* Project brief form */
+  wireForm(
+    document.getElementById('briefForm'),
+    document.getElementById('formNote'),
+    function(){
+      var name = (document.getElementById('name').value || '').trim();
+      var ptype = (document.getElementById('ptype').value || '').trim();
+      return 'New project brief — ' + ptype + ' — ' + name;
+    }
+  );
+
+  /* Feedback form + star rating */
+  var starWrap = document.getElementById('stars');
+  var ratingInput = document.getElementById('fb-rating');
+  function paintStars(n){
+    if(!starWrap){ return; }
+    var btns = starWrap.querySelectorAll('.star');
+    for(var i=0;i<btns.length;i++){
+      if(i < n){ btns[i].classList.add('on'); } else { btns[i].classList.remove('on'); }
+    }
+  }
+  if(starWrap){
+    var starBtns = starWrap.querySelectorAll('.star');
+    for(var s=0;s<starBtns.length;s++){
+      starBtns[s].addEventListener('click', function(){
+        var v = parseInt(this.getAttribute('data-v'), 10);
+        if(ratingInput){ ratingInput.value = String(v); }
+        paintStars(v);
+      });
+    }
+  }
+  wireForm(
+    document.getElementById('feedbackForm'),
+    document.getElementById('fbNote'),
+    function(){
+      var name = (document.getElementById('fb-name').value || '').trim();
+      var stars = (ratingInput && ratingInput.value) ? ratingInput.value + '★ ' : '';
+      return 'Client feedback — ' + stars + name;
+    },
+    function(){ if(ratingInput){ ratingInput.value = ''; } paintStars(0); }
+  );
 })();
 </script>
 </body>
