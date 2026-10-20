@@ -2,6 +2,11 @@
   "use strict";
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* Local preview shows authoring placeholders (photo hints, bracketed copy) */
+  if(location.protocol === 'file:' || /^(localhost|127\.|0\.0\.0\.0|\[::1\])/.test(location.hostname)){
+    document.documentElement.classList.add('dev');
+  }
+
   /* Nav scroll state */
   var nav = document.getElementById('nav');
   function onScroll(){ if(window.scrollY > 12){ nav.classList.add('scrolled'); } else { nav.classList.remove('scrolled'); } }
@@ -10,13 +15,43 @@
   /* Mobile menu */
   var burger = document.getElementById('hamburger');
   var links = document.getElementById('navLinks');
+  function closeMenu(){ links.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
   burger.addEventListener('click', function(){
     var open = links.classList.toggle('open');
     burger.setAttribute('aria-expanded', open ? 'true':'false');
   });
   links.addEventListener('click', function(e){
-    if(e.target.tagName === 'A'){ links.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
+    if(e.target.tagName === 'A'){ closeMenu(); }
   });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && links.classList.contains('open')){ closeMenu(); burger.focus(); }
+  });
+  document.addEventListener('click', function(e){
+    if(links.classList.contains('open') && !nav.contains(e.target)){ closeMenu(); }
+  });
+
+  /* Highlight the nav link for the section in view (homepage only) */
+  var spyLinks = links.querySelectorAll('a[href^="#"]');
+  if(spyLinks.length && 'IntersectionObserver' in window){
+    var byId = {};
+    spyLinks.forEach(function(a){ byId[a.getAttribute('href').slice(1)] = a; });
+    var spy = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        var a = byId[en.target.id];
+        if(!a){ return; }
+        if(en.isIntersecting){
+          spyLinks.forEach(function(l){ l.classList.remove('active'); });
+          a.classList.add('active');
+        } else if(a.classList.contains('active')){
+          a.classList.remove('active');
+        }
+      });
+    }, {rootMargin:'-45% 0px -50% 0px'});
+    Object.keys(byId).forEach(function(id){
+      var sec = document.getElementById(id);
+      if(sec){ spy.observe(sec); }
+    });
+  }
 
   /* Duplicate ticker content for seamless loop */
   var ticker = document.getElementById('ticker');
@@ -53,7 +88,7 @@
       data.append('subject', buildSubject());
       data.append('from_name', 'Copper & Code website');
 
-      if(note){ note.textContent = 'Sending…'; }
+      if(note){ note.classList.remove('err'); note.textContent = 'Sending…'; }
       if(submitBtn){ submitBtn.disabled = true; }
 
       fetch('https://api.web3forms.com/submit', { method:'POST', body:data })
@@ -64,11 +99,12 @@
             if(typeof onReset === 'function'){ onReset(); }
             if(note){ note.textContent = form.getAttribute('data-success') || 'Thanks — your message is on its way.'; }
           } else if(note){
+            note.classList.add('err');
             note.textContent = 'Something went wrong. Please email contact@copperandcode.net directly.';
           }
         })
         .catch(function(){
-          if(note){ note.textContent = 'Network error. Please email contact@copperandcode.net directly.'; }
+          if(note){ note.classList.add('err'); note.textContent = 'Network error. Please email contact@copperandcode.net directly.'; }
         })
         .then(function(){ if(submitBtn){ submitBtn.disabled = false; } });
     });
@@ -92,7 +128,8 @@
     if(!starWrap){ return; }
     var btns = starWrap.querySelectorAll('.star');
     for(var i=0;i<btns.length;i++){
-      if(i < n){ btns[i].classList.add('on'); } else { btns[i].classList.remove('on'); }
+      btns[i].classList.toggle('on', i < n);
+      btns[i].setAttribute('aria-pressed', i === n - 1 ? 'true' : 'false');
     }
   }
   if(starWrap){

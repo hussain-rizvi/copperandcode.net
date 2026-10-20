@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Wireless vital-sign monitoring">
+<defs>
+  <pattern id="g" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="#212A2E" stroke-width="1"/></pattern>
+  <radialGradient id="glow" cx="50%" cy="50%" r="55%"><stop offset="0" stop-color="#ECB44A" stop-opacity=".10"/><stop offset="1" stop-color="#ECB44A" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="800" height="500" fill="#12181B"/>
+<rect width="800" height="500" fill="url(#g)" opacity=".8"/>
+<rect width="800" height="500" fill="url(#glow)"/>
+<g font-family="ui-monospace, Menlo, Consolas, 'Courier New', monospace" font-size="12" letter-spacing="2" fill="#7F8D93">
+  <text x="28" y="40">FIG. 01</text>
+  <text x="772" y="472" text-anchor="end">WIRELESS VITAL-SIGN MONITORING</text>
+</g>
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<polyline points="0.0,265.0 30.0,265.0 38.0,257.0 46.0,265.0 56.0,265.0 60.0,275.0 66.0,183.0 72.0,295.0 78.0,265.0 100.0,265.0 114.0,247.0 128.0,265.0 170.0,265.0 170.0,265.0 200.0,265.0 208.0,257.0 216.0,265.0 226.0,265.0 230.0,275.0 236.0,183.0 242.0,295.0 248.0,265.0 270.0,265.0 284.0,247.0 298.0,265.0 340.0,265.0 340.0,265.0 370.0,265.0 378.0,257.0 386.0,265.0 396.0,265.0 400.0,275.0 406.0,183.0 412.0,295.0 418.0,265.0 440.0,265.0 454.0,247.0 468.0,265.0 510.0,265.0 510.0,265.0 540.0,265.0 548.0,257.0 556.0,265.0 566.0,265.0 570.0,275.0 576.0,183.0 582.0,295.0 588.0,265.0 610.0,265.0 624.0,247.0 638.0,265.0 680.0,265.0 680.0,265.0 710.0,265.0 718.0,257.0 726.0,265.0 736.0,265.0 740.0,275.0 746.0,183.0 752.0,295.0 758.0,265.0 780.0,265.0 794.0,247.0" stroke="#ECB44A" stroke-width="2.5"/>
+<rect x="110" y="180" width="250" height="130" rx="65" fill="#0E1315" stroke="#E9EDEE" stroke-width="2"/>
+<rect x="124" y="194" width="222" height="102" rx="51" stroke="#2E3A40" stroke-width="1.5" stroke-dasharray="4 5"/>
+<circle cx="170" cy="245" r="17" stroke="#ECB44A" stroke-width="2"/><circle cx="170" cy="245" r="5" fill="#ECB44A" stroke="none"/>
+<circle cx="235" cy="245" r="17" stroke="#ECB44A" stroke-width="2"/><circle cx="235" cy="245" r="5" fill="#ECB44A" stroke="none"/>
+<circle cx="300" cy="245" r="17" stroke="#ECB44A" stroke-width="2"/><circle cx="300" cy="245" r="5" fill="#ECB44A" stroke="none"/>
+<path d="M187 245H218M252 245H283" stroke="#7F8D93" stroke-width="1.5"/>
+<text x="235" y="345" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, 'Courier New', monospace" font-size="12" letter-spacing="2" fill="#7F8D93" stroke="none">ECG PATCH · 5-LEAD</text>
+<circle cx="595" cy="245" r="78" fill="#0E1315" stroke="#E9EDEE" stroke-width="2"/>
+<circle cx="595" cy="245" r="60" stroke="#E9EDEE" stroke-width="2"/>
+<rect x="575" y="160" width="40" height="18" rx="5" fill="#0E1315" stroke="#ECB44A" stroke-width="2"/>
+<circle cx="587" cy="169" r="3" fill="#ECB44A" stroke="none"/><circle cx="603" cy="169" r="3" fill="#7F8D93" stroke="none"/>
+<polyline points="555.0,255.0 557.0,253.6 559.0,251.2 561.0,248.3 563.0,245.1 565.0,241.9 567.0,239.0 569.0,236.5 571.0,234.6 573.0,233.4 575.0,233.0 577.0,233.4 579.0,234.6 581.0,236.5 583.0,239.0 585.0,241.9 587.0,244.2 589.0,246.1 591.0,247.9 593.0,249.2 595.0,249.6 597.0,248.7 599.0,248.0 601.0,247.5 603.0,247.2 605.0,247.0 607.0,247.1 609.0,247.3 611.0,247.7 613.0,248.3 615.0,249.1 617.0,250.0 619.0,251.1 621.0,252.2 623.0,253.4 625.0,254.6 627.0,255.0 629.0,255.0 631.0,255.0 633.0,255.0 635.0,255.0" stroke="#ECB44A" stroke-width="2"/>
+<text x="595" y="360" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, 'Courier New', monospace" font-size="12" letter-spacing="2" fill="#7F8D93" stroke="none">RING · SpO₂ · PPG</text>
+<path d="M380 215 Q 450 175 515 205" stroke="#7F8D93" stroke-width="1.5" stroke-dasharray="3 7"/>
+<text x="448" y="172" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, 'Courier New', monospace" font-size="12" letter-spacing="2" fill="#ECB44A" stroke="none">BLE</text>
+</g>
+</svg>

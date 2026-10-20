@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Pro pyrotechnics firing system">
+<defs>
+  <pattern id="g" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="#212A2E" stroke-width="1"/></pattern>
+  <radialGradient id="glow" cx="50%" cy="50%" r="55%"><stop offset="0" stop-color="#ECB44A" stop-opacity=".10"/><stop offset="1" stop-color="#ECB44A" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="800" height="500" fill="#12181B"/>
+<rect width="800" height="500" fill="url(#g)" opacity=".8"/>
+<rect width="800" height="500" fill="url(#glow)"/>
+<g font-family="ui-monospace, Menlo, Consolas, 'Courier New', monospace" font-size="12" letter-spacing="2" fill="#7F8D93">
+  <text x="28" y="40">FIG. 02</text>
+  <text x="772" y="472" text-anchor="end">PRO PYROTECHNICS FIRING SYSTEM</text>
+</g>
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<rect x="80" y="175" width="250" height="170" rx="12" fill="#0E1315" stroke="#E9EDEE" stroke-width="2"/>
+<rect x="100" y="195" width="130" height="70" rx="5" stroke="#2E3A40" stroke-width="1.5"/>
+<text x="165" y="226" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, 'Courier New', monospace" font-size="13" letter-spacing="2" fill="#ECB44A" stroke="none">CUE 042</text>
+<text x="165" y="248" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, 'Courier New', monospace" font-size="11" letter-spacing="2" fill="#7F8D93" stroke="none">01:02:14:08</text>
+<circle cx="258" cy="212" r="5" fill="#ECB44A" stroke="none"/>
+<circle cx="280" cy="212" r="5" fill="#2E3A40" stroke="none"/>
+<circle cx="302" cy="212" r="5" fill="#2E3A40" stroke="none"/>
+<rect x="248" y="232" width="62" height="30" rx="5" stroke="#ECB44A" stroke-width="2"/>
+<text x="279" y="252" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, 'Courier New', monospace" font-size="10" letter-spacing="2" fill="#ECB44A" stroke="none">ARM</text>
+<circle cx="108" cy="300" r="7" stroke="#7F8D93" stroke-width="1.5"/><circle cx="108" cy="322" r="3" fill="#7F8D93" stroke="none"/>
+<circle cx="136" cy="300" r="7" stroke="#7F8D93" stroke-width="1.5"/><circle cx="136" cy="322" r="3" fill="#7F8D93" stroke="none"/>
+<circle cx="164" cy="300" r="7" stroke="#7F8D93" stroke-width="1.5"/><circle cx="164" cy="322" r="3" fill="#7F8D93" stroke="none"/>
+<circle cx="192" cy="300" r="7" stroke="#7F8D93" stroke-width="1.5"/><circle cx="192" cy="322" r="3" fill="#7F8D93" stroke="none"/>
+<circle cx="220" cy="300" r="7" stroke="#7F8D93" stroke-width="1.5"/><circle cx="220" cy="322" r="3" fill="#7F8D93" stroke="none"/>
+<circle cx="248" cy="300" r="7" stroke="#7F8D93" stroke-width="1.5"/><circle cx="248" cy="322" r="3" fill="#7F8D93" stroke="none"/>
+<circle cx="276" cy="300" r="7" stroke="#7F8D93" stroke-width="1.5"/><circle cx="276" cy="322" r="3" fill="#7F8D93" stroke="none"/>
+<circle cx="304" cy="300" r="7" stroke="#7F8D93" stroke-width="1.5"/><circle cx="304" cy="322" r="3" fill="#7F8D93" stroke="none"/>
+<path d="M300 175V120" stroke="#E9EDEE" stroke-width="2"/><circle cx="300" cy="116" r="4" fill="#E9EDEE" stroke="none"/>
+<path d="M315.4 100.6A22 22 0 0 1 315.4 131.4" stroke="#ECB44A" stroke-width="1.8" opacity="0.76"/>
+<path d="M328.0 88.0A40 40 0 0 1 328.0 144.0" stroke="#ECB44A" stroke-width="1.8" opacity="0.56"/>
+<path d="M340.6 75.4A58 58 0 0 1 340.6 156.6" stroke="#ECB44A" stroke-width="1.8" opacity="0.36"/>
+<polyline points="400.0,218.0 400.0,218.0 409.0,218.0 409.0,182.0 418.0,182.0 418.0,218.0 436.0,218.0 436.0,182.0 445.0,182.0 445.0,218.0 454.0,218.0 454.0,182.0 463.0,182.0 463.0,218.0 472.0,218.0 472.0,182.0 490.0,182.0 490.0,218.0 508.0,218.0 508.0,182.0 517.0,182.0 517.0,218.0 526.0,218.0 526.0,182.0 544.0,182.0 544.0,218.0 553.0,218.0 553.0,182.0 562.0,182.0 562.0,218.0 571.0,218.0 571.0,182.0 580.0,182.0 580.0,218.0 589.0,218.0 589.0,182.0 598.0,182.0 598.0,218.0 616.0,218.0 616.0,182.0 634.0,182.0 634.0,218.0 643.0,218.0 643.0,182.0 652.0,182.0 652.0,218.0 670.0,218.0 670.0,182.0 679.0,182.0 679.0,218.0 688.0,218.0 688.0,182.0 706.0,182.0 706.0,218.0 724.0,218.0 724.0,182.0 733.0,182.0 733.0,218.0 742.0,218.0 742.0,182.0 751.0,182.0 751.0,218.0 760.0,218.0" stroke="#ECB44A" stroke-width="2"/>
+<text x="400" y="160" text-anchor="start" font-family="ui-monospace, Menlo, Consolas, 'Courier New', monospace" font-size="12" letter-spacing="2" fill="#7F8D93" stroke="none">FSK / SMPTE TIMECODE</text>
+<path d="M400 300H760" stroke="#2E3A40" stroke-width="2"/>
+<path d="M420 300V254" stroke="#ECB44A" stroke-width="2"/><circle cx="420" cy="254" r="3.5" fill="#ECB44A" stroke="none"/>
+<path d="M470 300V272" stroke="#E9EDEE" stroke-width="2"/><circle cx="470" cy="272" r="3.5" fill="#E9EDEE" stroke="none"/>
+<path d="M505 300V272" stroke="#E9EDEE" stroke-width="2"/><circle cx="505" cy="272" r="3.5" fill="#E9EDEE" stroke="none"/>
+<path d="M580 300V254" stroke="#ECB44A" stroke-width="2"/><circle cx="580" cy="254" r="3.5" fill="#ECB44A" stroke="none"/>
+<path d="M640 300V272" stroke="#E9EDEE" stroke-width="2"/><circle cx="640" cy="272" r="3.5" fill="#E9EDEE" stroke="none"/>
+<path d="M665 300V272" stroke="#E9EDEE" stroke-width="2"/><circle cx="665" cy="272" r="3.5" fill="#E9EDEE" stroke="none"/>
+<path d="M730 300V254" stroke="#ECB44A" stroke-width="2"/><circle cx="730" cy="254" r="3.5" fill="#ECB44A" stroke="none"/>
+<text x="400" y="335" text-anchor="start" font-family="ui-monospace, Menlo, Consolas, 'Courier New', monospace" font-size="12" letter-spacing="2" fill="#7F8D93" stroke="none">CUE LIST · 400+ MODULES</text>
+</g>
+</svg>

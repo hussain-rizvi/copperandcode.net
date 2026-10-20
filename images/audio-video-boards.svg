@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Pro audio &amp; video boards">
+<defs>
+  <pattern id="g" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="#212A2E" stroke-width="1"/></pattern>
+  <radialGradient id="glow" cx="50%" cy="50%" r="55%"><stop offset="0" stop-color="#ECB44A" stop-opacity=".10"/><stop offset="1" stop-color="#ECB44A" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="800" height="500" fill="#12181B"/>
+<rect width="800" height="500" fill="url(#g)" opacity=".8"/>
+<rect width="800" height="500" fill="url(#glow)"/>
+<g font-family="ui-monospace, Menlo, Consolas, 'Courier New', monospace" font-size="12" letter-spacing="2" fill="#7F8D93">
+  <text x="28" y="40">FIG. 06</text>
+  <text x="772" y="472" text-anchor="end">PRO AUDIO &amp; VIDEO BOARDS</text>
+</g>
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<rect x="70" y="150" width="400" height="220" rx="10" fill="#0E1315" stroke="#E9EDEE" stroke-width="2"/>
+<circle cx="88" cy="168" r="6" stroke="#7F8D93" stroke-width="1.5"/>
+<circle cx="452" cy="168" r="6" stroke="#7F8D93" stroke-width="1.5"/>
+<circle cx="88" cy="352" r="6" stroke="#7F8D93" stroke-width="1.5"/>
+<circle cx="452" cy="352" r="6" stroke="#7F8D93" stroke-width="1.5"/>
+<rect x="215" y="205" width="90" height="90" rx="4" stroke="#ECB44A" stroke-width="2"/>
+<path d="M221 205V195M221 295V305M215 215H205M305 215H315" stroke="#ECB44A" stroke-width="1.5"/>
+<path d="M234 205V195M234 295V305M215 228H205M305 228H315" stroke="#ECB44A" stroke-width="1.5"/>
+<path d="M247 205V195M247 295V305M215 241H205M305 241H315" stroke="#ECB44A" stroke-width="1.5"/>
+<path d="M260 205V195M260 295V305M215 254H205M305 254H315" stroke="#ECB44A" stroke-width="1.5"/>
+<path d="M273 205V195M273 295V305M215 267H205M305 267H315" stroke="#ECB44A" stroke-width="1.5"/>
+<path d="M286 205V195M286 295V305M215 280H205M305 280H315" stroke="#ECB44A" stroke-width="1.5"/>
+<path d="M299 205V195M299 295V305M215 293H205M305 293H315" stroke="#ECB44A" stroke-width="1.5"/>
+<text x="260" y="255" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, 'Courier New', monospace" font-size="12" letter-spacing="2" fill="#ECB44A" stroke="none">STM32</text>
+<circle cx="110" cy="200" r="16" stroke="#E9EDEE" stroke-width="2"/><circle cx="110" cy="200" r="6" fill="#E9EDEE" stroke="none"/>
+<path d="M126 200H165Q180 200 180 225V250H205" stroke="#2E3A40" stroke-width="2"/>
+<circle cx="110" cy="260" r="16" stroke="#E9EDEE" stroke-width="2"/><circle cx="110" cy="260" r="6" fill="#E9EDEE" stroke="none"/>
+<path d="M126 260H165Q180 260 180 255V250H205" stroke="#2E3A40" stroke-width="2"/>
+<circle cx="110" cy="320" r="16" stroke="#E9EDEE" stroke-width="2"/><circle cx="110" cy="320" r="6" fill="#E9EDEE" stroke="none"/>
+<path d="M126 320H165Q180 320 180 285V250H205" stroke="#2E3A40" stroke-width="2"/>
+<rect x="380" y="190" width="50" height="28" rx="4" stroke="#E9EDEE" stroke-width="2"/>
+<text x="405" y="240" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, 'Courier New', monospace" font-size="10" letter-spacing="2" fill="#7F8D93" stroke="none">USB</text>
+<path d="M398 285l14 12-7 6V273l7 6-14 12" stroke="#ECB44A" stroke-width="2"/>
+<path d="M315 225H350Q365 225 365 212V204H380M315 280H360Q375 280 385 288" stroke="#2E3A40" stroke-width="2"/>
+<path d="M500 250H760" stroke="#2E3A40" stroke-width="1" stroke-dasharray="2 6"/>
+<polyline points="500.0,250.0 502.0,244.9 504.0,239.9 506.0,238.5 508.0,242.8 510.0,251.2 512.0,259.1 514.0,262.2 516.0,259.7 518.0,254.0 520.0,248.9 522.0,246.3 524.0,245.9 526.0,246.2 528.0,247.8 530.0,252.1 532.0,259.5 534.0,266.4 536.0,267.0 538.0,257.6 540.0,240.7 542.0,225.3 544.0,220.4 546.0,228.7 548.0,244.5 550.0,258.4 552.0,264.0 554.0,261.8 556.0,256.4 558.0,251.1 560.0,245.6 562.0,238.7 564.0,232.7 566.0,234.1 568.0,248.2 570.0,271.9 572.0,292.8 574.0,296.8 576.0,279.1 578.0,248.6 580.0,222.5 582.0,213.6 584.0,222.2 586.0,238.5 588.0,251.9 590.0,258.8 592.0,261.8 594.0,263.0 596.0,258.8 598.0,244.4 600.0,221.3 602.0,201.8 604.0,201.7 606.0,227.4 608.0,268.4 610.0,302.3 612.0,311.0 614.0,292.7 616.0,262.1 618.0,237.9 620.0,229.0 622.0,232.2 624.0,239.3 626.0,247.2 628.0,258.1 630.0,273.2 632.0,285.2 634.0,281.6 636.0,256.2 638.0,217.7 640.0,187.1 642.0,183.4 644.0,209.2 646.0,248.4 648.0,278.8 650.0,287.6 652.0,277.7 654.0,261.6 656.0,249.1 658.0,241.7 660.0,236.2 662.0,232.9 664.0,237.6 666.0,254.8 668.0,280.0 670.0,299.1 672.0,297.6 674.0,272.9 676.0,237.7 678.0,211.4 680.0,206.3 682.0,220.4 684.0,241.1 686.0,256.0 688.0,261.1 690.0,260.1 692.0,257.2 694.0,252.7 696.0,244.4 698.0,233.1 700.0,225.2 702.0,228.2 704.0,244.4 706.0,266.4 708.0,282.2 710.0,282.9 712.0,269.9 714.0,252.1 716.0,239.6 718.0,236.5 720.0,240.4 722.0,245.8 724.0,250.0 726.0,253.2 728.0,256.3 730.0,258.2 732.0,256.1 734.0,248.8 736.0,239.1 738.0,232.7 740.0,233.7 742.0,242.0 744.0,252.7 746.0,259.9 748.0,260.9 750.0,257.1 752.0,252.2 754.0,249.0 756.0,247.8 758.0,247.7 760.0,248.0" stroke="#ECB44A" stroke-width="1.8"/>
+<text x="630" y="360" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, 'Courier New', monospace" font-size="12" letter-spacing="2" fill="#7F8D93" stroke="none">ONE BINARY · MANY VARIANTS</text>
+</g>
+</svg>

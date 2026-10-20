@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Digital nose — air quality">
+<defs>
+  <pattern id="g" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="#212A2E" stroke-width="1"/></pattern>
+  <radialGradient id="glow" cx="50%" cy="50%" r="55%"><stop offset="0" stop-color="#ECB44A" stop-opacity=".10"/><stop offset="1" stop-color="#ECB44A" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="800" height="500" fill="#12181B"/>
+<rect width="800" height="500" fill="url(#g)" opacity=".8"/>
+<rect width="800" height="500" fill="url(#glow)"/>
+<g font-family="ui-monospace, Menlo, Consolas, 'Courier New', monospace" font-size="12" letter-spacing="2" fill="#7F8D93">
+  <text x="28" y="40">FIG. 04</text>
+  <text x="772" y="472" text-anchor="end">DIGITAL NOSE — AIR QUALITY</text>
+</g>
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="102" cy="187" r="3" stroke="#ECB44A" stroke-width="1.5" opacity="0.86"/>
+<circle cx="58" cy="265" r="4" stroke="#ECB44A" stroke-width="1.5" opacity="0.49"/>
+<circle cx="119" cy="203" r="8" stroke="#ECB44A" stroke-width="1.5" opacity="0.86"/>
+<circle cx="64" cy="200" r="3" stroke="#E9EDEE" stroke-width="1.5" opacity="0.74"/>
+<circle cx="49" cy="200" r="4" stroke="#7F8D93" stroke-width="1.5" opacity="0.66"/>
+<circle cx="143" cy="263" r="4" stroke="#ECB44A" stroke-width="1.5" opacity="0.74"/>
+<circle cx="161" cy="227" r="3" stroke="#E9EDEE" stroke-width="1.5" opacity="0.48"/>
+<circle cx="79" cy="282" r="8" stroke="#7F8D93" stroke-width="1.5" opacity="0.68"/>
+<circle cx="215" cy="225" r="4" stroke="#ECB44A" stroke-width="1.5" opacity="0.80"/>
+<circle cx="86" cy="263" r="8" stroke="#7F8D93" stroke-width="1.5" opacity="0.81"/>
+<circle cx="95" cy="336" r="3" stroke="#E9EDEE" stroke-width="1.5" opacity="0.66"/>
+<circle cx="184" cy="187" r="8" stroke="#7F8D93" stroke-width="1.5" opacity="0.47"/>
+<circle cx="167" cy="298" r="6" stroke="#7F8D93" stroke-width="1.5" opacity="0.80"/>
+<circle cx="153" cy="264" r="8" stroke="#ECB44A" stroke-width="1.5" opacity="0.87"/>
+<circle cx="219" cy="245" r="3" stroke="#ECB44A" stroke-width="1.5" opacity="0.82"/>
+<circle cx="99" cy="264" r="8" stroke="#7F8D93" stroke-width="1.5" opacity="0.81"/>
+<circle cx="209" cy="222" r="8" stroke="#7F8D93" stroke-width="1.5" opacity="0.53"/>
+<circle cx="62" cy="171" r="6" stroke="#ECB44A" stroke-width="1.5" opacity="0.82"/>
+<circle cx="116" cy="325" r="8" stroke="#ECB44A" stroke-width="1.5" opacity="0.53"/>
+<circle cx="116" cy="210" r="4" stroke="#7F8D93" stroke-width="1.5" opacity="0.88"/>
+<circle cx="93" cy="235" r="6" stroke="#E9EDEE" stroke-width="1.5" opacity="0.89"/>
+<circle cx="222" cy="187" r="4" stroke="#ECB44A" stroke-width="1.5" opacity="0.57"/>
+<circle cx="84" cy="247" r="4" stroke="#7F8D93" stroke-width="1.5" opacity="0.59"/>
+<circle cx="68" cy="256" r="6" stroke="#ECB44A" stroke-width="1.5" opacity="0.80"/>
+<circle cx="138" cy="271" r="3" stroke="#7F8D93" stroke-width="1.5" opacity="0.90"/>
+<circle cx="188" cy="317" r="8" stroke="#7F8D93" stroke-width="1.5" opacity="0.65"/>
+<path d="M60 250H240" stroke="#7F8D93" stroke-width="1.5" stroke-dasharray="2 8"/>
+<rect x="250" y="160" width="190" height="180" rx="18" fill="#0E1315" stroke="#E9EDEE" stroke-width="2"/>
+<path d="M272 190H312" stroke="#7F8D93" stroke-width="2"/>
+<path d="M272 204H312" stroke="#7F8D93" stroke-width="2"/>
+<path d="M272 218H312" stroke="#7F8D93" stroke-width="2"/>
+<path d="M272 232H312" stroke="#7F8D93" stroke-width="2"/>
+<path d="M272 246H312" stroke="#7F8D93" stroke-width="2"/>
+<path d="M272 260H312" stroke="#7F8D93" stroke-width="2"/>
+<rect x="335" y="186" width="80" height="70" rx="6" stroke="#ECB44A" stroke-width="2"/>
+<text x="375" y="218" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, 'Courier New', monospace" font-size="11" letter-spacing="2" fill="#ECB44A" stroke="none">VOC</text>
+<text x="375" y="238" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, 'Courier New', monospace" font-size="10" letter-spacing="2" fill="#7F8D93" stroke="none">PM2.5</text>
+<rect x="272" y="290" width="54" height="24" rx="4" stroke="#E9EDEE" stroke-width="2"/><path d="M328 298V306" stroke="#E9EDEE" stroke-width="3"/>
+<rect x="277" y="295" width="34" height="14" rx="2" fill="#ECB44A" stroke="none"/>
+<text x="382" y="307" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, 'Courier New', monospace" font-size="10" letter-spacing="2" fill="#7F8D93" stroke="none">μA SLEEP</text>
+<path d="M463.8 218.8A16 16 0 0 1 486.2 218.8" stroke="#ECB44A" stroke-width="2" opacity="1.00"/>
+<path d="M454.0 209.0A30 30 0 0 1 496.0 209.0" stroke="#ECB44A" stroke-width="2" opacity="0.75"/>
+<path d="M444.2 199.2A44 44 0 0 1 505.8 199.2" stroke="#ECB44A" stroke-width="2" opacity="0.50"/>
+<circle cx="475" cy="232" r="3.5" fill="#ECB44A" stroke="none"/>
+<path d="M500 250H580" stroke="#7F8D93" stroke-width="1.5" stroke-dasharray="3 7"/>
+<path d="M610 290H725A38 38 0 0 0 717 215A50 50 0 0 0 627 205A42 42 0 0 0 610 290Z" fill="#0E1315" stroke="#E9EDEE" stroke-width="2"/>
+<text x="668" y="262" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, 'Courier New', monospace" font-size="12" letter-spacing="2" fill="#ECB44A" stroke="none">AWS IoT</text>
+<text x="668" y="330" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, 'Courier New', monospace" font-size="12" letter-spacing="2" fill="#7F8D93" stroke="none">MQTT · OTA</text>
+</g>
+</svg>

@@ -9,8 +9,35 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://copperandcode.net/">
+<meta name="theme-color" content="#0B0E0F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Copper &amp; Code">
+<meta property="og:title" content="Copper &amp; Code — Embedded Systems &amp; Firmware Studio">
+<meta property="og:description" content="Firmware, multi-layer PCBs, and low-power wireless for medical, industrial, and connected devices — 10+ years shipping microcontroller products end to end.">
+<meta property="og:url" content="https://copperandcode.net/">
+<meta property="og:image" content="https://copperandcode.net/images/og/home.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Copper & Code",
+  "description": "Embedded systems studio: firmware, PCB and hardware design, low-power wireless, and mechanical development.",
+  "url": "https://copperandcode.net/",
+  "email": "contact@copperandcode.net",
+  "areaServed": ["US", "CA", "EU", "GB", "AU"],
+  "address": { "@type": "PostalAddress", "addressLocality": "Lahore", "addressCountry": "PK" }
+}
+</script>
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
+
+<a class="skip" href="#main">Skip to content</a>
 
 <!-- NAV -->
 <nav class="nav" id="nav">
@@ -25,16 +52,19 @@
       <a href="#experience">Experience</a>
       <a href="#stack">Stack</a>
       <a href="#feedback">Feedback</a>
+      <a href="#contact" class="menu-only">Contact</a>
     </div>
     <div class="nav-cta">
-      <a href="#contact" class="btn btn-ghost">contact@copperandcode.net</a>
+      <a href="mailto:contact@copperandcode.net" class="btn btn-ghost">contact@copperandcode.net</a>
       <a href="#contact" class="btn btn-primary">Start a project</a>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-controls="navLinks" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
 </nav>
+
+<main id="main">
 
 <!-- HERO -->
 <header class="hero" id="top">
@@ -87,9 +117,6 @@
     <span class="ticker-item">Ruby on Rails</span>
     <span class="ticker-item">Python</span>
     <span class="ticker-item">C / C++</span>
-    <span class="ticker-item">Ruby on Rails</span>
-
-
   </div>
 </div>
 
@@ -143,8 +170,7 @@
     <div class="work-grid">
       <a class="work reveal" href="work/vital-sign-monitoring.html">
         <div class="work-media">
-          <span class="media-hint">Drop photo at<br>images/medical-monitoring.jpg</span>
-          <img src="images/medical-monitoring.jpg" alt="Wireless vital-sign monitoring device" loading="lazy" onerror="this.style.display='none'">
+          <img src="images/vital-sign-monitoring.svg" alt="Illustration: ECG patch and ring sensor linked over BLE" loading="lazy" onerror="this.parentNode.classList.add('no-img')">
         </div>
         <div class="work-meta"><span><span class="dot"></span>Medical wearables</span><span>nRF52 · STM32</span></div>
         <h3>Wireless vital-sign monitoring</h3>
@@ -154,8 +180,7 @@
       </a>
       <a class="work reveal" href="work/pyro-firing-system.html">
         <div class="work-media">
-          <span class="media-hint">Drop photo at<br>images/pyro-system.jpg</span>
-          <img src="images/pyro-system.jpg" alt="Wireless pyrotechnics firing system" loading="lazy" onerror="this.style.display='none'">
+          <img src="images/pyro-firing-system.svg" alt="Illustration: wireless firing module with FSK timecode and cue timeline" loading="lazy" onerror="this.parentNode.classList.add('no-img')">
         </div>
         <div class="work-meta"><span><span class="dot"></span>Event technology</span><span>DSP · Wireless</span></div>
         <h3>Pro pyrotechnics firing system</h3>
@@ -165,8 +190,7 @@
       </a>
       <a class="work reveal" href="work/crypto-hardware-wallet.html">
         <div class="work-media">
-          <span class="media-hint">Drop photo at<br>images/crypto-wallet.jpg</span>
-          <img src="images/crypto-wallet.jpg" alt="Cryptocurrency hardware wallet" loading="lazy" onerror="this.style.display='none'">
+          <img src="images/crypto-hardware-wallet.svg" alt="Illustration: hardware wallet confirming a transaction, with key-derivation tree" loading="lazy" onerror="this.parentNode.classList.add('no-img')">
         </div>
         <div class="work-meta"><span><span class="dot"></span>Fintech security</span><span>STM32 · C</span></div>
         <h3>Cryptocurrency hardware wallet</h3>
@@ -176,8 +200,7 @@
       </a>
       <a class="work reveal" href="work/digital-nose.html">
         <div class="work-media">
-          <span class="media-hint">Drop photo at<br>images/digital-nose.jpg</span>
-          <img src="images/digital-nose.jpg" alt="Air-quality and odor sensing node" loading="lazy" onerror="this.style.display='none'">
+          <img src="images/digital-nose.svg" alt="Illustration: battery-powered air-quality node publishing to AWS IoT" loading="lazy" onerror="this.parentNode.classList.add('no-img')">
         </div>
         <div class="work-meta"><span><span class="dot"></span>Environmental sensing</span><span>AWS IoT</span></div>
         <h3>Digital nose — air quality &amp; odor</h3>
@@ -187,8 +210,7 @@
       </a>
       <a class="work reveal" href="work/smart-patient-bed.html">
         <div class="work-media">
-          <span class="media-hint">Drop photo at<br>images/patient-bed.jpg</span>
-          <img src="images/patient-bed.jpg" alt="Smart patient bed sensor system" loading="lazy" onerror="this.style.display='none'">
+          <img src="images/smart-patient-bed.svg" alt="Illustration: patient bed sensor grid on a CAN bus" loading="lazy" onerror="this.parentNode.classList.add('no-img')">
         </div>
         <div class="work-meta"><span><span class="dot"></span>Medical monitoring</span><span>CAN · BLE</span></div>
         <h3>Smart patient bed</h3>
@@ -198,8 +220,7 @@
       </a>
       <a class="work reveal" href="work/audio-video-boards.html">
         <div class="work-media">
-          <span class="media-hint">Drop photo at<br>images/audio-boards.jpg</span>
-          <img src="images/audio-boards.jpg" alt="Pro audio and video boards" loading="lazy" onerror="this.style.display='none'">
+          <img src="images/audio-video-boards.svg" alt="Illustration: STM32 audio board with jacks, USB and Bluetooth" loading="lazy" onerror="this.parentNode.classList.add('no-img')">
         </div>
         <div class="work-meta"><span><span class="dot"></span>Pro-audio &amp; video</span><span>STM32 · RK3566</span></div>
         <h3>Pro audio &amp; video boards</h3>
@@ -219,7 +240,7 @@
         <span class="idx">03 / EXPERIENCE</span>
         <h2>Ten years, from bare metal to production</h2>
       </div>
-      <p class="lede reveal">Team — a decade taking microcontroller products end to end, across medical, industrial, and consumer domains.</p>
+      <p class="lede reveal">A decade taking microcontroller products end to end, across medical, industrial, and consumer domains.</p>
     </div>
 
     <div class="stats reveal">
@@ -276,7 +297,7 @@
     <div class="sec-head">
       <div class="reveal">
         <span class="idx">04 / CAPABILITIES</span>
-        <h2>The stack I reach for</h2>
+        <h2>The stack we reach for</h2>
       </div>
       <p class="lede reveal">Silicon, tooling, and standards from a decade of shipping — spanning MCUs, wireless, sensing, power, and the cloud behind them.</p>
     </div>
@@ -356,31 +377,31 @@
 
     <div class="loc-grid">
       <div class="loc hq reveal">
-        <div class="loc-role"><span class="led" style="width:6px;height:6px"></span>HQ · Engineering</div>
+        <div class="loc-role"><span class="led led-sm"></span>HQ · Engineering</div>
         <div class="loc-city">Lahore</div>
         <div class="loc-country">PK — Pakistan</div>
-        <div class="loc-addr">Design &amp; firmware lab<br>[ Street address ]</div>
+        <div class="loc-addr">Design &amp; firmware lab<span class="placeholder"><br>[ Street address ]</span></div>
         <div class="loc-tz mono">PKT · UTC+5</div>
       </div>
       <div class="loc reveal">
         <div class="loc-role">Local contact</div>
         <div class="loc-city">Sydney</div>
         <div class="loc-country">AU — Australia</div>
-        <div class="loc-addr">[ Street address ]<br>[ Suburb, NSW ]</div>
+        <div class="loc-addr placeholder">[ Street address ]<br>[ Suburb, NSW ]</div>
         <div class="loc-tz mono">AEDT · UTC+11</div>
       </div>
       <div class="loc reveal">
         <div class="loc-role">Local contact</div>
         <div class="loc-city">Berlin</div>
         <div class="loc-country">DE — Germany</div>
-        <div class="loc-addr">[ Straße + Nr. ]<br>[ Berlin ]</div>
+        <div class="loc-addr placeholder">[ Straße + Nr. ]<br>[ Berlin ]</div>
         <div class="loc-tz mono">CET · UTC+1</div>
       </div>
       <div class="loc reveal">
         <div class="loc-role">Local contact</div>
         <div class="loc-city">London</div>
         <div class="loc-country">UK — England</div>
-        <div class="loc-addr">[ Street address ]<br>[ London ]</div>
+        <div class="loc-addr placeholder">[ Street address ]<br>[ London ]</div>
         <div class="loc-tz mono">GMT · UTC+0</div>
       </div>
     </div>
@@ -395,11 +416,11 @@
         <span class="idx">07 / CLIENT FEEDBACK</span>
         <h2>What clients say — and your turn to weigh in</h2>
       </div>
-      <p class="lede reveal">Feedback from teams I've built for. Worked with me before? Add yours below — the ones I feature land right here.</p>
+      <p class="lede reveal">Feedback from teams we've built for. Worked with us before? Add yours below — the ones we feature land right here.</p>
     </div>
 
     <div class="quotes">
-      <div class="quote reveal">
+      <div class="quote reveal placeholder">
         <div class="quote-stars">★★★★★</div>
         <p>[ Replace with a real client quote — what you built for them and how the project went. Keep it to two or three sentences. ]</p>
         <div class="quote-by">
@@ -407,7 +428,7 @@
           <div class="quote-role">Role · Company</div>
         </div>
       </div>
-      <div class="quote reveal">
+      <div class="quote reveal placeholder">
         <div class="quote-stars">★★★★★</div>
         <p>[ Replace with a second client quote. Specific results — “shipped on time”, “passed certification”, “battery life doubled” — land best. ]</p>
         <div class="quote-by">
@@ -415,7 +436,7 @@
           <div class="quote-role">Role · Company</div>
         </div>
       </div>
-      <div class="quote reveal">
+      <div class="quote reveal placeholder">
         <div class="quote-stars">★★★★★</div>
         <p>[ Replace with a third client quote. A short line about working style or communication works well here. ]</p>
         <div class="quote-by">
@@ -428,7 +449,7 @@
     <div class="feedback-form reveal">
       <div class="fb-head">
         <h3>Share your experience</h3>
-        <p>A few words on the project and how it went. Submitting sends it straight to me — I'll always ask before featuring it on the site.</p>
+        <p>A few words on the project and how it went. Submitting sends it straight to us — we'll always ask before featuring it on the site.</p>
       </div>
       <form id="feedbackForm" novalidate data-success="Thank you for the feedback — it genuinely means a lot.">
         <!-- Honeypot: hidden from people, catches spam bots. Leave as-is. -->
@@ -447,11 +468,11 @@
         <div class="field">
           <label>Rating</label>
           <div class="stars" id="stars" role="group" aria-label="Rating out of 5">
-            <button type="button" class="star" data-v="1" aria-label="1 star">★</button>
-            <button type="button" class="star" data-v="2" aria-label="2 stars">★</button>
-            <button type="button" class="star" data-v="3" aria-label="3 stars">★</button>
-            <button type="button" class="star" data-v="4" aria-label="4 stars">★</button>
-            <button type="button" class="star" data-v="5" aria-label="5 stars">★</button>
+            <button type="button" class="star" aria-pressed="false" data-v="1" aria-label="1 star">★</button>
+            <button type="button" class="star" aria-pressed="false" data-v="2" aria-label="2 stars">★</button>
+            <button type="button" class="star" aria-pressed="false" data-v="3" aria-label="3 stars">★</button>
+            <button type="button" class="star" aria-pressed="false" data-v="4" aria-label="4 stars">★</button>
+            <button type="button" class="star" aria-pressed="false" data-v="5" aria-label="5 stars">★</button>
           </div>
         </div>
         <div class="field">
@@ -472,14 +493,14 @@
   <div class="wrap">
     <div class="contact-grid">
       <div class="contact-info reveal">
-        <span class="idx" style="font-family:var(--font-mono);color:var(--gold);letter-spacing:.18em;font-size:12px">08 / START A PROJECT</span>
-        <h2 style="margin-top:14px">Tell us what you're building.</h2>
+        <span class="idx">08 / START A PROJECT</span>
+        <h2>Tell us what you're building.</h2>
         <p>Send a brief — even a rough one. You'll hear back within two business days, from an engineer, not a sales bot.</p>
         <div class="contact-direct">
           <div class="k">Direct</div>
           <a href="mailto:contact@copperandcode.net">contact@copperandcode.net</a>
         </div>
-        <div class="status"><span class="led" style="width:8px;height:8px"></span>Currently booking new projects</div>
+        <div class="status"><span class="led"></span>Currently booking new projects</div>
       </div>
 
       <div class="reveal">
@@ -489,16 +510,16 @@
           <div class="frow">
             <div class="field">
               <label for="name">Name</label>
-              <input type="text" id="name" name="name" placeholder="Your name" required>
+              <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" required>
             </div>
             <div class="field">
               <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="you@company.com" required>
+              <input type="email" id="email" name="email" placeholder="you@company.com" autocomplete="email" required>
             </div>
           </div>
           <div class="field">
-            <label for="company">Company <span style="text-transform:none;color:#5a656a">(optional)</span></label>
-            <input type="text" id="company" name="company" placeholder="Company or project name">
+            <label for="company">Company <span class="label-opt">(optional)</span></label>
+            <input type="text" id="company" name="company" placeholder="Company or project name" autocomplete="organization">
           </div>
           <div class="field">
             <label for="ptype">Project type</label>
@@ -507,6 +528,7 @@
               <option>Firmware engineering</option>
               <option>PCB / hardware design</option>
               <option>Wireless / low-power</option>
+              <option>Mechanical / enclosure design</option>
               <option>Sensing / medical device</option>
               <option>Not sure yet</option>
             </select>
@@ -525,6 +547,8 @@
   </div>
 </section>
 
+</main>
+
 <!-- FOOTER -->
 <footer class="footer">
   <div class="wrap">
@@ -539,7 +563,7 @@
           <li><a href="#services">Firmware</a></li>
           <li><a href="#services">PCB &amp; hardware</a></li>
           <li><a href="#services">Wireless &amp; low-power</a></li>
-          <li><a href="#services">Sensing &amp; medical</a></li>
+          <li><a href="#services">Mechanical design</a></li>
         </ul>
       </div>
       <div>
