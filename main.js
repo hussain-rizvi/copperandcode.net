@@ -152,4 +152,34 @@
     },
     function(){ if(ratingInput){ ratingInput.value = ''; } paintStars(0); }
   );
+
+  /* Studio time zones: live local time + DST-correct abbreviation/offset.
+     data-tz = IANA zone, data-abbr = "STD" or "STD/DST". */
+  var tzEls = document.querySelectorAll('[data-tz]');
+  function tzOffset(tz, date){
+    var p = {};
+    new Intl.DateTimeFormat('en-US', { timeZone:tz, hourCycle:'h23', year:'numeric', month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit', second:'2-digit' })
+      .formatToParts(date).forEach(function(x){ p[x.type] = x.value; });
+    var asUTC = Date.UTC(+p.year, +p.month - 1, +p.day, +p.hour % 24, +p.minute, +p.second);
+    return Math.round((asUTC - date.getTime()) / 60000);
+  }
+  function fmtOffset(mins){
+    var sign = mins < 0 ? '−' : '+', a = Math.abs(mins), m = a % 60;
+    return 'UTC' + sign + Math.floor(a / 60) + (m ? ':' + (m < 10 ? '0' : '') + m : '');
+  }
+  function paintZones(){
+    var now = new Date(), y = now.getUTCFullYear();
+    for(var i=0;i<tzEls.length;i++){
+      var el = tzEls[i], tz = el.getAttribute('data-tz');
+      var names = (el.getAttribute('data-abbr') || '').split('/');
+      var off = tzOffset(tz, now);
+      var std = Math.min(tzOffset(tz, new Date(Date.UTC(y, 0, 1))), tzOffset(tz, new Date(Date.UTC(y, 6, 1))));
+      var abbr = (off > std && names[1]) ? names[1] : names[0];
+      var time = new Intl.DateTimeFormat('en-GB', { timeZone:tz, hour:'2-digit', minute:'2-digit' }).format(now);
+      el.textContent = time + ' · ' + (abbr ? abbr + ' · ' : '') + fmtOffset(off);
+    }
+  }
+  if(tzEls.length && window.Intl && Intl.DateTimeFormat.prototype.formatToParts){
+    try { paintZones(); setInterval(paintZones, 30000); } catch(e){}
+  }
 })();
