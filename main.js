@@ -57,6 +57,86 @@
   var ticker = document.getElementById('ticker');
   if(ticker){ ticker.innerHTML += ticker.innerHTML; }
 
+  /* Process: turn the step list into a clickable stepper with a detail card.
+     Auto-advances until the visitor picks a step. */
+  var steps = document.querySelector('.steps');
+  if(steps){
+    var stepEls = steps.querySelectorAll('.step');
+    var proc = document.createElement('div'); proc.className = 'proc';
+    var rail = document.createElement('div'); rail.className = 'proc-rail'; rail.setAttribute('role','tablist');
+    var dots = [], cur = 0, timer = null;
+    function showStep(i){
+      cur = i;
+      for(var k=0;k<stepEls.length;k++){
+        stepEls[k].classList.toggle('active', k === i);
+        dots[k].classList.toggle('active', k === i);
+        dots[k].classList.toggle('done', k < i);
+        dots[k].setAttribute('aria-selected', k === i ? 'true' : 'false');
+      }
+      rail.style.setProperty('--p', stepEls.length > 1 ? i / (stepEls.length - 1) : 0);
+    }
+    stepEls.forEach(function(st, i){
+      var n = st.querySelector('.step-n'), h = st.querySelector('h3');
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'proc-dot'; b.setAttribute('role','tab');
+      b.innerHTML = '<span>' + n.textContent + '</span><small>' + h.textContent + '</small>';
+      b.addEventListener('click', function(){ clearInterval(timer); showStep(i); });
+      n.textContent = 'Stage ' + n.textContent;
+      dots.push(b); rail.appendChild(b);
+    });
+    steps.parentNode.insertBefore(proc, steps);
+    proc.appendChild(rail); proc.appendChild(steps);
+    steps.classList.add('enhanced');
+    showStep(0);
+    if(!reduce){ timer = setInterval(function(){ showStep((cur + 1) % stepEls.length); }, 4500); }
+  }
+
+  /* Capabilities: turn the matrix rows into category tabs with technology tiles */
+  var matrix = document.querySelector('.matrix');
+  if(matrix){
+    var rows = matrix.querySelectorAll('.mrow');
+    var tabs = document.createElement('div'); tabs.className = 'tabs';
+    var list = document.createElement('div'); list.className = 'tab-list'; list.setAttribute('role','tablist');
+    var panels = document.createElement('div');
+    var btns = [], pans = [];
+    function showTab(i){
+      for(var k=0;k<btns.length;k++){
+        btns[k].classList.toggle('active', k === i);
+        btns[k].setAttribute('aria-selected', k === i ? 'true' : 'false');
+        pans[k].hidden = k !== i;
+      }
+    }
+    rows.forEach(function(row, i){
+      var tags = row.querySelectorAll('.tag');
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'tab-btn'; b.setAttribute('role','tab');
+      b.innerHTML = row.querySelector('.mkey').innerHTML + '<span>' + tags.length + '</span>';
+      b.addEventListener('click', function(){ showTab(i); });
+      var p = document.createElement('div'); p.className = 'tab-panel'; p.setAttribute('role','tabpanel');
+      tags.forEach(function(t, j){
+        var tile = document.createElement('div'); tile.className = 'tile';
+        tile.style.animationDelay = Math.min(j * 30, 400) + 'ms';
+        tile.innerHTML = '<small>' + (j < 9 ? '0' : '') + (j + 1) + '</small>' + t.innerHTML;
+        p.appendChild(tile);
+      });
+      btns.push(b); pans.push(p); list.appendChild(b); panels.appendChild(p);
+    });
+    tabs.appendChild(list); tabs.appendChild(panels);
+    matrix.parentNode.insertBefore(tabs, matrix);
+    matrix.hidden = true;
+    showTab(0);
+  }
+
+  /* Problems carousel arrows */
+  var pbTrack = document.getElementById('pbTrack');
+  document.querySelectorAll('.pb-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var card = pbTrack.querySelector('.pb-card');
+      var step = card ? card.getBoundingClientRect().width + 18 : 300;
+      pbTrack.scrollBy({ left: step * parseInt(b.getAttribute('data-dir'), 10), behavior: reduce ? 'auto' : 'smooth' });
+    });
+  });
+
   /* Reveal on scroll */
   var reveals = document.querySelectorAll('.reveal');
   if(reduce || !('IntersectionObserver' in window)){

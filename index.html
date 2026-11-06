@@ -74,12 +74,67 @@
 <!-- HERO -->
 <header class="hero" id="top">
   <div class="wrap">
-    <div class="eyebrow hero-eyebrow reveal">PCB · Firmware · IoT &amp; BLE · Backend · Web &amp; Mobile Apps · CAD</div>
-    <h1 class="reveal">End-to-end product development for products that <em>have to work.</em></h1>
-    <p class="hero-sub reveal">Copper &amp; Code is a product development company with 10+ years taking products from idea to production — circuit boards, embedded firmware, IoT and BLE connectivity, backend and cloud, web and mobile apps, and mechanical design, all under one roof.</p>
-    <div class="hero-actions reveal">
-      <a href="#contact" class="btn btn-primary">Start a project →</a>
-      <a href="#work" class="btn btn-ghost">See selected work</a>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="hero-badge reveal"><span class="led led-sm"></span>Complete product development</div>
+        <h1 class="reveal">End-to-end <em>product development</em> for products that have to work.</h1>
+        <p class="hero-sub reveal">Copper &amp; Code is a product development company with 10+ years taking products from idea to production — circuit boards, embedded firmware, IoT and BLE connectivity, backend and cloud, web and mobile apps, and mechanical design, all under one roof.</p>
+        <div class="hero-actions reveal">
+          <a href="#contact" class="btn btn-primary">Start a project ↗</a>
+          <a href="#services" class="btn btn-ghost">Explore our services ↓</a>
+        </div>
+      </div>
+
+      <!-- SYSTEM MAP: hub + six disciplines, pulses travel along the links -->
+      <div class="hero-visual reveal" aria-hidden="true">
+        <span class="hv-hud tl">SYSTEM_MAP // LIVE</span>
+        <span class="hv-hud tr">COPPER &amp; CODE</span>
+        <span class="hv-hud bl"><span class="led led-sm"></span>6 DISCIPLINES · 1 TEAM</span>
+        <span class="hv-hud br">IDEA → PRODUCTION</span>
+        <svg viewBox="0 0 520 520" class="hv-svg">
+          <defs>
+            <radialGradient id="hvGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0" stop-color="#ECB44A" stop-opacity=".22"/>
+              <stop offset=".55" stop-color="#ECB44A" stop-opacity=".05"/>
+              <stop offset="1" stop-color="#ECB44A" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <circle cx="260" cy="260" r="240" fill="url(#hvGlow)"/>
+          <g class="hv-tech">
+            <text x="70" y="62">nRF52</text><text x="392" y="52">STM32</text>
+            <text x="24" y="262">ALTIUM</text><text x="446" y="262">AWS</text>
+            <text x="66" y="472">FLUTTER</text><text x="380" y="480">SOLIDWORKS</text>
+            <text x="200" y="22">ESP32</text><text x="236" y="508">REACT</text>
+          </g>
+          <circle class="hv-orbit spin" cx="260" cy="260" r="190"/>
+          <circle class="hv-orbit gold spin-rev" cx="260" cy="260" r="122"/>
+          <g class="hv-links">
+            <path id="hvL0" d="M260 260 L260 70"/>
+            <path id="hvL1" d="M260 260 L424.5 165"/>
+            <path id="hvL2" d="M260 260 L424.5 355"/>
+            <path id="hvL3" d="M260 260 L260 450"/>
+            <path id="hvL4" d="M260 260 L95.5 355"/>
+            <path id="hvL5" d="M260 260 L95.5 165"/>
+          </g>
+          <g class="hv-pulse">
+            <circle r="3.5"><animateMotion dur="2.6s" begin="0s" repeatCount="indefinite"><mpath href="#hvL0"/></animateMotion></circle>
+            <circle r="3.5"><animateMotion dur="2.6s" begin=".45s" repeatCount="indefinite"><mpath href="#hvL1"/></animateMotion></circle>
+            <circle r="3.5"><animateMotion dur="2.6s" begin=".9s" repeatCount="indefinite"><mpath href="#hvL2"/></animateMotion></circle>
+            <circle r="3.5"><animateMotion dur="2.6s" begin="1.35s" repeatCount="indefinite"><mpath href="#hvL3"/></animateMotion></circle>
+            <circle r="3.5"><animateMotion dur="2.6s" begin="1.8s" repeatCount="indefinite"><mpath href="#hvL4"/></animateMotion></circle>
+            <circle r="3.5"><animateMotion dur="2.6s" begin="2.25s" repeatCount="indefinite"><mpath href="#hvL5"/></animateMotion></circle>
+          </g>
+          <g class="hv-node" transform="translate(260 70)"><rect x="-26" y="-15" width="52" height="30" rx="15"/><text y="4">PCB</text></g>
+          <g class="hv-node" transform="translate(424.5 165)"><rect x="-46" y="-15" width="92" height="30" rx="15"/><text y="4">FIRMWARE</text></g>
+          <g class="hv-node" transform="translate(424.5 355)"><rect x="-48" y="-15" width="96" height="30" rx="15"/><text y="4">IOT · BLE</text></g>
+          <g class="hv-node" transform="translate(260 450)"><rect x="-33" y="-15" width="66" height="30" rx="15"/><text y="4">CLOUD</text></g>
+          <g class="hv-node" transform="translate(95.5 355)"><rect x="-30" y="-15" width="60" height="30" rx="15"/><text y="4">APPS</text></g>
+          <g class="hv-node" transform="translate(95.5 165)"><rect x="-26" y="-15" width="52" height="30" rx="15"/><text y="4">CAD</text></g>
+          <circle class="hv-ping" cx="260" cy="260" r="46"/>
+          <circle class="hv-hub" cx="260" cy="260" r="46"/>
+          <text class="hv-hub-t" x="260" y="268">Cu</text>
+        </svg>
+      </div>
     </div>
 
     <!-- CAPABILITIES READOUT PANEL -->
@@ -133,42 +188,116 @@
     <div class="sec-head">
       <div class="reveal">
         <span class="idx">01 / SERVICES</span>
-        <h2>What we design, build, and ship</h2>
+        <h2>What we design, build, and <em>ship</em></h2>
       </div>
       <p class="lede reveal">Everything your product needs, from one team. Circuit board, firmware, cloud, app, and enclosure — designed together, so they work together from day one.</p>
     </div>
 
     <div class="svc-grid">
       <div class="svc reveal">
-        <div class="svc-top"><span class="svc-ref">U1</span><h3>PCB &amp; Hardware Design</h3></div>
+        <div class="svc-dg"><div class="dg-stack">
+          <div class="dg-row" style="--i:0"><span>Top copper</span><i></i></div>
+          <div class="dg-row" style="--i:1"><span>Ground plane</span><i></i></div>
+          <div class="dg-row" style="--i:2"><span>Power plane</span><i></i></div>
+          <div class="dg-row" style="--i:3"><span>Bottom copper</span><i></i></div>
+        </div></div>
+        <div class="svc-meta"><span class="svc-ic"><svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg></span><span class="svc-n">01 / 06</span></div>
+        <h3>PCB &amp; Hardware Design</h3>
         <p>Schematic capture and multi-layer layout — power trees, mixed-signal, and RF, with HDI and via-in-pad for fine-pitch parts. Designed for manufacture from the first revision.</p>
         <div class="tags"><span class="tag">4–6 layer</span><span class="tag">HDI</span><span class="tag">RF layout</span><span class="tag">DFM review</span></div>
       </div>
       <div class="svc reveal">
-        <div class="svc-top"><span class="svc-ref">U2</span><h3>Embedded Firmware</h3></div>
+        <div class="svc-dg"><div class="dg-stack">
+          <div class="dg-row" style="--i:0"><span>Application</span><i></i></div>
+          <div class="dg-row" style="--i:1"><span>RTOS / Linux</span><i></i></div>
+          <div class="dg-row" style="--i:2"><span>Drivers · HAL</span><i></i></div>
+          <div class="dg-row" style="--i:3"><span>MCU</span><i></i></div>
+        </div></div>
+        <div class="svc-meta"><span class="svc-ic"><svg viewBox="0 0 24 24"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6M14 4l-4 16"/></svg></span><span class="svc-n">02 / 06</span></div>
+        <h3>Embedded Firmware</h3>
         <p>Bare-metal, RTOS, and embedded Linux on nRF52, ESP32, STM32, and application processors — drivers, low-power state machines, bootloaders, and OTA that survives a bad connection.</p>
         <div class="tags"><span class="tag">Zephyr / NCS</span><span class="tag">FreeRTOS</span><span class="tag">Embedded Linux</span><span class="tag">OTA DFU</span><span class="tag">C / C++</span></div>
       </div>
       <div class="svc reveal">
-        <div class="svc-top"><span class="svc-ref">U3</span><h3>IoT &amp; Wireless Connectivity</h3></div>
+        <div class="svc-dg"><div class="dg-hub">
+          <div class="dg-side"><span>BLE</span><span>Wi-Fi</span></div>
+          <div class="dg-core"><svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M10 10h4v4h-4z"/></svg><b>Device</b></div>
+          <div class="dg-side r"><span>LTE-M</span><span>MQTT</span></div>
+        </div></div>
+        <div class="svc-meta"><span class="svc-ic"><svg viewBox="0 0 24 24"><path d="M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M2 9a15 15 0 0 1 20 0"/><circle cx="12" cy="19.5" r="1"/></svg></span><span class="svc-n">03 / 06</span></div>
+        <h3>IoT &amp; Wireless Connectivity</h3>
         <p>BLE, Wi-Fi, cellular, and mesh connectivity with current budgets measured in microamps — plus device provisioning, MQTT, and fleet-wide OTA updates.</p>
         <div class="tags"><span class="tag">BLE 5.x</span><span class="tag">Wi-Fi</span><span class="tag">LTE-M / NB-IoT</span><span class="tag">MQTT</span><span class="tag">µA sleep</span></div>
       </div>
       <div class="svc reveal">
-        <div class="svc-top"><span class="svc-ref">U4</span><h3>Backend &amp; Cloud</h3></div>
+        <div class="svc-dg"><div class="dg-stack flat">
+          <div class="dg-row"><span>REST / GraphQL API</span><i></i></div>
+          <div class="dg-row"><span>Services · Auth · Queues</span><i></i></div>
+          <div class="dg-row"><span>Database · Storage</span><i></i></div>
+        </div></div>
+        <div class="svc-meta"><span class="svc-ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span><span class="svc-n">04 / 06</span></div>
+        <h3>Backend &amp; Cloud</h3>
         <p>APIs, databases, and device-cloud platforms that ingest data from your hardware and serve it to your apps and dashboards — on AWS, Azure, or your own servers.</p>
         <div class="tags"><span class="tag">Node.js</span><span class="tag">Python / Django / FastAPI</span><span class="tag">REST APIs</span><span class="tag">PostgreSQL / MongoDB</span><span class="tag">AWS IoT</span></div>
       </div>
       <div class="svc reveal">
-        <div class="svc-top"><span class="svc-ref">U5</span><h3>Web &amp; Mobile Apps</h3></div>
+        <div class="svc-dg"><div class="dg-hub">
+          <div class="dg-side"><span>iOS</span><span>Android</span></div>
+          <div class="dg-core"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg><b>App</b></div>
+          <div class="dg-side r"><span>Web</span><span>BLE</span></div>
+        </div></div>
+        <div class="svc-meta"><span class="svc-ic"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></span><span class="svc-n">05 / 06</span></div>
+        <h3>Web &amp; Mobile Apps</h3>
         <p>Web dashboards, customer portals, and companion mobile apps — the screens your users actually touch, with BLE pairing, live device data, and UX designed around real people.</p>
         <div class="tags"><span class="tag">React / Next.js</span><span class="tag">Flutter</span><span class="tag">React Native</span><span class="tag">Swift / Kotlin</span><span class="tag">BLE apps</span><span class="tag">UI/UX design</span></div>
       </div>
       <div class="svc reveal">
-        <div class="svc-top"><span class="svc-ref">U6</span><h3>Mechanical &amp; Enclosure Design</h3></div>
+        <div class="svc-dg"><div class="dg-stack">
+          <div class="dg-row" style="--i:0"><span>Concept sketch</span><i></i></div>
+          <div class="dg-row" style="--i:1"><span>3D CAD model</span><i></i></div>
+          <div class="dg-row" style="--i:2"><span>Prototype</span><i></i></div>
+          <div class="dg-row" style="--i:3"><span>Production</span><i></i></div>
+        </div></div>
+        <div class="svc-meta"><span class="svc-ic"><svg viewBox="0 0 24 24"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 22V12M21 7l-9 5-9-5"/></svg></span><span class="svc-n">06 / 06</span></div>
+        <h3>Mechanical &amp; Enclosure Design</h3>
         <p>Enclosures and mechanical parts designed in CAD around the electronics — from 3D-printed prototypes to production-ready, manufacturable designs.</p>
         <div class="tags"><span class="tag">SolidWorks</span><span class="tag">Fusion 360</span><span class="tag">3D modeling</span><span class="tag">Prototyping</span><span class="tag">DFM</span></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT CONNECTS -->
+<section class="section alt" id="connect">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="reveal">
+        <span class="idx">02 / HOW IT CONNECTS</span>
+        <h2>One team across <em>every layer</em></h2>
+      </div>
+      <p class="lede reveal">Every discipline feeds the next. Because one team owns them all, the board, the firmware, the cloud, and the app are designed around each other from day one.</p>
+    </div>
+    <div class="net reveal">
+      <svg class="net-lines" viewBox="0 0 1000 520" preserveAspectRatio="none" aria-hidden="true">
+        <g class="nl-main">
+          <path d="M500 260 L500 62"/><path d="M500 260 L790 166"/><path d="M500 260 L790 354"/>
+          <path d="M500 260 L500 458"/><path d="M500 260 L210 354"/><path d="M500 260 L210 166"/>
+        </g>
+        <g class="nl-sub">
+          <path d="M210 166 L210 62"/><path d="M790 166 L790 62"/><path d="M210 354 L210 458"/><path d="M790 354 L790 458"/>
+        </g>
+      </svg>
+      <a class="net-hub" href="#services" style="left:50%;top:50%"><span class="chip">Cu</span>Copper &amp; Code</a>
+      <a class="net-node" href="#services" style="left:50%;top:12%"><i></i>PCB &amp; hardware</a>
+      <a class="net-node" href="#services" style="left:79%;top:32%"><i></i>Embedded firmware</a>
+      <a class="net-node" href="#services" style="left:79%;top:68%"><i></i>IoT &amp; BLE</a>
+      <a class="net-node" href="#services" style="left:50%;top:88%"><i></i>Backend &amp; cloud</a>
+      <a class="net-node" href="#services" style="left:21%;top:68%"><i></i>Web &amp; mobile apps</a>
+      <a class="net-node" href="#services" style="left:21%;top:32%"><i></i>Mechanical CAD</a>
+      <span class="net-node sub" style="left:21%;top:12%">Prototyping</span>
+      <span class="net-node sub" style="left:79%;top:12%">Low power &amp; OTA</span>
+      <span class="net-node sub" style="left:21%;top:88%">UI/UX design</span>
+      <span class="net-node sub" style="left:79%;top:88%">Security</span>
     </div>
   </div>
 </section>
@@ -178,8 +307,8 @@
   <div class="wrap">
     <div class="sec-head">
       <div class="reveal">
-        <span class="idx">02 / SELECTED WORK</span>
-        <h2>A track record in hard problems</h2>
+        <span class="idx">03 / SELECTED WORK</span>
+        <h2>A track record in <em>hard problems</em></h2>
       </div>
       <p class="lede reveal">Real products across consumer, industrial, entertainment, and medical domains. Each card opens the full case study — described by sector, with client names kept for conversation.</p>
     </div>
@@ -264,8 +393,8 @@
   <div class="wrap">
     <div class="sec-head">
       <div class="reveal">
-        <span class="idx">03 / EXPERIENCE</span>
-        <h2>Ten years, from circuit board to cloud</h2>
+        <span class="idx">04 / EXPERIENCE</span>
+        <h2>Ten years, from circuit board to <em>cloud</em></h2>
       </div>
       <p class="lede reveal">A decade taking products end to end — hardware, firmware, connectivity, and the software around them — across consumer, industrial, and medical domains.</p>
     </div>
@@ -323,8 +452,8 @@
   <div class="wrap">
     <div class="sec-head">
       <div class="reveal">
-        <span class="idx">04 / CAPABILITIES</span>
-        <h2>The stack we reach for</h2>
+        <span class="idx">05 / CAPABILITIES</span>
+        <h2>The stack we <em>reach for</em></h2>
       </div>
       <p class="lede reveal">Silicon, tooling, and frameworks from a decade of shipping — spanning hardware, firmware, wireless, cloud, and the apps on top.</p>
     </div>
@@ -379,8 +508,8 @@
   <div class="wrap">
     <div class="sec-head">
       <div class="reveal">
-        <span class="idx">05 / HOW WE WORK</span>
-        <h2>From idea to manufacturable product</h2>
+        <span class="idx">06 / HOW WE WORK</span>
+        <h2>From idea to <em>manufacturable product</em></h2>
       </div>
       <p class="lede reveal">A sequence, not a scramble. Every stage produces something you can review before we move to the next.</p>
     </div>
@@ -395,13 +524,61 @@
   </div>
 </section>
 
+<!-- PROBLEMS WE SOLVE -->
+<section class="section" id="problems">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="reveal">
+        <span class="idx">07 / PROBLEMS WE SOLVE</span>
+        <h2>Where products usually <em>get stuck</em></h2>
+      </div>
+      <div class="pb-arrows reveal">
+        <button type="button" class="pb-btn" data-dir="-1" aria-label="Previous">‹</button>
+        <button type="button" class="pb-btn" data-dir="1" aria-label="Next">›</button>
+      </div>
+    </div>
+    <div class="pb-track reveal" id="pbTrack">
+      <article class="pb-card">
+        <h3>An idea, but no hardware yet</h3>
+        <p>You have a product concept and need it turned into a working prototype — electronics, firmware, enclosure, and app — without hiring four separate vendors.</p>
+        <a href="#contact">Complete product development →</a>
+      </article>
+      <article class="pb-card">
+        <h3>A prototype that won't scale</h3>
+        <p>The proof of concept works on the bench but isn't ready for production. We redesign for cost, manufacturability, certification, and reliability.</p>
+        <a href="#contact">PCB &amp; hardware redesign →</a>
+      </article>
+      <article class="pb-card">
+        <h3>Battery life falls short</h3>
+        <p>The device drains in days instead of months. We profile the current draw and rework the power design, sleep states, and radio duty cycle.</p>
+        <a href="#contact">Low-power firmware →</a>
+      </article>
+      <article class="pb-card">
+        <h3>Unreliable connectivity</h3>
+        <p>BLE drops, Wi-Fi reconnect loops, or OTA updates that brick devices in the field. We trace the problem from radio to cloud and fix it at the source.</p>
+        <a href="#contact">IoT &amp; wireless →</a>
+      </article>
+      <article class="pb-card">
+        <h3>The device needs an app and a cloud</h3>
+        <p>The hardware works, but customers need a mobile app, a dashboard, and a backend to store and act on the data. We build the whole software side.</p>
+        <a href="#contact">Backend, web &amp; mobile apps →</a>
+      </article>
+      <article class="pb-card">
+        <h3>A stalled or inherited project</h3>
+        <p>A previous team left undocumented code or a half-finished design. We audit what exists, stabilise it, and get it shipping.</p>
+        <a href="#contact">Discuss your project →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
 <!-- STUDIO / LOCATIONS -->
 <section class="section alt" id="studio">
   <div class="wrap">
     <div class="sec-head">
       <div class="reveal">
-        <span class="idx">06 / TEAM</span>
-        <h2>A distributed team, on your clock</h2>
+        <span class="idx">08 / TEAM</span>
+        <h2>A distributed team, <em>on your clock</em></h2>
       </div>
     </div>
     <p class="loc-lede reveal">People and points of contact across four time zones — so your project keeps moving while you sleep, and there's someone in a nearby hour when you need to talk.</p>
@@ -444,7 +621,7 @@
   <div class="wrap">
     <div class="sec-head">
       <div class="reveal">
-        <span class="idx">07 / CLIENT FEEDBACK</span>
+        <span class="idx">09 / CLIENT FEEDBACK</span>
         <h2>What clients say — and your turn to weigh in</h2>
       </div>
       <p class="lede reveal">Feedback from teams we've built for. Worked with us before? Add yours below — the ones we feature land right here.</p>
@@ -524,8 +701,8 @@
   <div class="wrap">
     <div class="contact-grid">
       <div class="contact-info reveal">
-        <span class="idx">08 / START A PROJECT</span>
-        <h2>Tell us what you're building.</h2>
+        <span class="idx">10 / START A PROJECT</span>
+        <h2>Tell us what you're <em>building.</em></h2>
         <p>Send a brief — even a rough one. You'll hear back within two business days, from an engineer, not a sales bot.</p>
         <div class="contact-direct">
           <div class="k">Direct</div>
