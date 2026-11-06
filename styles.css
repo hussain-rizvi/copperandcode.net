@@ -374,16 +374,22 @@ html:not(.dev) .quotes:not(:has(> .quote:not(.placeholder))){display:none}
 .detail-hero .tags{margin-top:26px}
 .detail-hero .work-meta{margin-top:24px}
 
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+/* 6-column grid: items take a third (2), wide two thirds (4), half a row (3) */
+.gallery{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
 .gallery-item{
-  position:relative;aspect-ratio:4/3;border-radius:12px;overflow:hidden;
+  position:relative;aspect-ratio:4/3;border-radius:12px;overflow:hidden;grid-column:span 2;
   background:var(--panel-2);border:1px solid var(--line);display:grid;place-items:center;
   background-image:repeating-linear-gradient(45deg,transparent 0 10px,rgba(46,58,64,.18) 10px 11px);
 }
-.gallery-item.wide{grid-column:span 2;aspect-ratio:8/5}
+.gallery-item.wide{grid-column:span 4;aspect-ratio:8/5}
+.gallery-item.half{grid-column:span 3}
 html:not(.dev) .gallery-section:not(:has(.gallery-item:not(.no-img))){display:none}
-/* only the cover illustration so far: show it as a full-width banner */
-html:not(.dev) .gallery:not(:has(.gallery-item:not(.wide):not(.no-img))) .gallery-item.wide{grid-column:1/-1;aspect-ratio:16/7}
+/* nothing beside the cover illustration: show it as a full-width banner */
+.gallery:not(:has(.gallery-item:not(.wide):not(.half):not(.no-img))) .gallery-item.wide{grid-column:1/-1;aspect-ratio:16/7}
+.img-note{
+  position:absolute;left:10px;bottom:10px;font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;color:#E9EDEE;background:rgba(11,14,15,.72);padding:4px 8px;border-radius:4px;
+}
 .gallery-item img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 /* PCB renders: show the whole board on its own grey backdrop instead of cropping */
 .render{background:#DFDFDF}
@@ -407,6 +413,7 @@ html:not(.dev) .gallery:not(:has(.gallery-item:not(.wide):not(.no-img))) .galler
 
 @media(max-width:900px){
   .gallery{grid-template-columns:1fr 1fr}
+  .gallery-item,.gallery-item.half{grid-column:span 1}
   .gallery-item.wide{grid-column:span 2}
 }
 @media(max-width:560px){
