@@ -385,6 +385,11 @@ html:not(.dev) .gallery-section:not(:has(.gallery-item:not(.no-img))){display:no
 /* only the cover illustration so far: show it as a full-width banner */
 html:not(.dev) .gallery:not(:has(.gallery-item:not(.wide):not(.no-img))) .gallery-item.wide{grid-column:1/-1;aspect-ratio:16/7}
 .gallery-item img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+/* PCB renders: show the whole board on its own grey backdrop instead of cropping */
+.render{background:#DFDFDF}
+.render img{object-fit:contain}
+.gallery-item.strip{grid-column:1/-1;aspect-ratio:6/1}
+.gallery-item.full{grid-column:1/-1;aspect-ratio:5/2}
 
 .detail-cta{text-align:center}
 .detail-cta h2{font-family:var(--font-display);font-weight:700;font-size:clamp(1.6rem,3vw,2.2rem);letter-spacing:-.015em}
