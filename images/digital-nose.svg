@@ -7,7 +7,7 @@
 <rect width="800" height="500" fill="url(#g)" opacity=".8"/>
 <rect width="800" height="500" fill="url(#glow)"/>
 <g font-family="ui-monospace, Menlo, Consolas, 'Courier New', monospace" font-size="12" letter-spacing="2" fill="#7F8D93">
-  <text x="28" y="40">FIG. 05</text>
+  <text x="28" y="40">FIG. 02</text>
   <text x="772" y="472" text-anchor="end">DIGITAL NOSE — AIR QUALITY</text>
 </g>
 <g fill="none" stroke-linecap="round" stroke-linejoin="round">
