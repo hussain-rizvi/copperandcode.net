@@ -455,49 +455,73 @@
         <span class="idx">05 / CAPABILITIES</span>
         <h2>The stack we <em>reach for</em></h2>
       </div>
-      <p class="lede reveal">Silicon, tooling, and frameworks from a decade of shipping — spanning hardware, firmware, wireless, cloud, and the apps on top.</p>
+      <p class="lede reveal">The platforms, tools, and frameworks we work with across the full product stack — from silicon and circuit boards to the cloud and the app store.</p>
     </div>
 
     <div class="matrix reveal">
       <div class="mrow">
-        <div class="mkey">Microcontrollers</div>
-        <div class="mval"><span class="tag">STM32 F4/L7/H5/H7</span><span class="tag">nRF52840</span><span class="tag">nRF9160</span><span class="tag">ESP32-S3</span><span class="tag">RK3566</span><span class="tag">Raspberry Pi</span></div>
+        <div class="mkey">Microcontrollers &amp; SoCs</div>
+        <div class="mval"><span class="tag">STM32 (F0 / F4 / L4 / H7 / U5 / WB)</span><span class="tag">Nordic nRF52 / nRF53 / nRF54</span><span class="tag">Nordic nRF91 (LTE-M / NB-IoT)</span><span class="tag">ESP32 / ESP32-S3 / C3 / C6</span><span class="tag">NXP i.MX RT / LPC / Kinetis</span><span class="tag">Microchip PIC / AVR / SAM</span><span class="tag">TI MSP430 / CC26xx / CC13xx</span><span class="tag">Silicon Labs EFR32</span><span class="tag">Renesas RA / RX</span><span class="tag">Raspberry Pi RP2040 / RP2350</span><span class="tag">Arm Cortex-M0 to M7</span></div>
       </div>
       <div class="mrow">
-        <div class="mkey">RTOS / Firmware / Linux</div>
-        <div class="mval"><span class="tag">FreeRTOS</span><span class="tag">Zephyr</span><span class="tag">Bare-metal</span><span class="tag">LVGL</span><span class="tag">Bootloaders (USB/OTA)</span><span class="tag">Embedded Linux</span><span class="tag">Yocto / Buildroot</span><span class="tag">Kernel drivers / Device tree</span><span class="tag">Debian/Ubuntu (SBC)</span><span class="tag">systemd</span><span class="tag">Cross-compilation toolchains</span><span class="tag">ESP-IDF</span><span class="tag">Nordic NCS/SDK</span><span class="tag">STM32Cube</span><span class="tag">CMake</span><span class="tag">PlatformIO</span><span class="tag">GCC/ARM toolchain</span><span class="tag">J-Link / Ozone</span><span class="tag">GDB</span><span class="tag">Unity / Ceedling</span><span class="tag">Mbed OS</span><span class="tag">Azure RTOS / ThreadX</span></div>
+        <div class="mkey">Embedded Linux &amp; processors</div>
+        <div class="mval"><span class="tag">Raspberry Pi / Compute Module</span><span class="tag">NXP i.MX 6 / i.MX 8</span><span class="tag">Rockchip RK3566 / RK3588</span><span class="tag">NVIDIA Jetson</span><span class="tag">TI Sitara (AM335x / AM62x)</span><span class="tag">Yocto Project</span><span class="tag">Buildroot</span><span class="tag">Debian / Ubuntu</span><span class="tag">Kernel drivers &amp; device tree</span><span class="tag">U-Boot</span><span class="tag">systemd services</span><span class="tag">Cross-compilation toolchains</span></div>
       </div>
       <div class="mrow">
-        <div class="mkey">Wireless &amp; buses</div>
-        <div class="mval"><span class="tag">BLE</span><span class="tag">Wi-Fi</span><span class="tag">LTE / LTE-M</span><span class="tag">CAN</span><span class="tag">Zigbee / DigiMesh</span><span class="tag">USB (CDC/MSC/Audio)</span></div>
+        <div class="mkey">RTOS &amp; firmware</div>
+        <div class="mval"><span class="tag">FreeRTOS</span><span class="tag">Zephyr RTOS</span><span class="tag">Azure RTOS / ThreadX</span><span class="tag">Mbed OS</span><span class="tag">Bare-metal C / C++</span><span class="tag">ESP-IDF</span><span class="tag">nRF Connect SDK</span><span class="tag">STM32Cube / HAL / LL</span><span class="tag">CMSIS</span><span class="tag">Arduino / PlatformIO</span><span class="tag">MCUboot &amp; custom bootloaders</span><span class="tag">OTA / DFU updates</span></div>
       </div>
       <div class="mrow">
-        <div class="mkey">Sensing &amp; signal</div>
-        <div class="mval"><span class="tag">Environmental (gas, humidity, pressure)</span><span class="tag">IMU / GNSS</span><span class="tag">Audio (USB / S/PDIF)</span><span class="tag">DSP (FSK/SMPTE)</span><span class="tag">Biomedical (ECG, SpO₂)</span></div>
+        <div class="mkey">Wireless &amp; IoT protocols</div>
+        <div class="mval"><span class="tag">Bluetooth Low Energy 5.x</span><span class="tag">Bluetooth Classic</span><span class="tag">Wi-Fi (2.4 / 5 GHz)</span><span class="tag">LTE-M / NB-IoT / 4G</span><span class="tag">LoRa / LoRaWAN</span><span class="tag">Zigbee</span><span class="tag">Thread / Matter</span><span class="tag">DigiMesh</span><span class="tag">NFC / RFID</span><span class="tag">GNSS / GPS</span><span class="tag">MQTT / CoAP</span><span class="tag">Sub-GHz RF</span></div>
       </div>
       <div class="mrow">
-        <div class="mkey">Cloud &amp; IoT</div>
-        <div class="mval"><span class="tag">AWS IoT Core</span><span class="tag">Azure</span><span class="tag">MQTT</span><span class="tag">HTTP / OTA</span></div>
+        <div class="mkey">Wired interfaces &amp; buses</div>
+        <div class="mval"><span class="tag">UART / RS-232</span><span class="tag">RS-485 / Modbus RTU</span><span class="tag">Modbus TCP</span><span class="tag">SPI / QSPI</span><span class="tag">I²C / SMBus</span><span class="tag">CAN / CAN FD</span><span class="tag">USB (CDC / HID / MSC / Audio)</span><span class="tag">Ethernet / TCP-IP (lwIP)</span><span class="tag">I2S / SAI / S/PDIF</span><span class="tag">SDIO / SD card</span><span class="tag">1-Wire</span><span class="tag">PWM / ADC / DAC</span></div>
       </div>
       <div class="mrow">
-        <div class="mkey">Front End &amp; Back End</div>
-        <div class="mval"><span class="tag">React / Next.js</span><span class="tag">Node.js / Express</span><span class="tag">Python</span><span class="tag">Django / FastAPI</span><span class="tag">Ruby on Rails</span><span class="tag">REST APIs</span><span class="tag">PostgreSQL / MongoDB</span></div>
+        <div class="mkey">Sensors, signals &amp; edge AI</div>
+        <div class="mval"><span class="tag">IMU / motion sensing</span><span class="tag">Environmental (temp, humidity, gas, pressure)</span><span class="tag">GNSS positioning</span><span class="tag">Biomedical (ECG, PPG, SpO₂)</span><span class="tag">Audio capture &amp; DSP</span><span class="tag">Motor control (BLDC / stepper / servo)</span><span class="tag">Power &amp; energy metering</span><span class="tag">Camera &amp; machine vision</span><span class="tag">Edge AI / TinyML (TensorFlow Lite Micro)</span><span class="tag">Sensor fusion &amp; filtering</span></div>
+      </div>
+      <div class="mrow">
+        <div class="mkey">PCB &amp; hardware design</div>
+        <div class="mval"><span class="tag">Altium Designer</span><span class="tag">KiCad</span><span class="tag">OrCAD / Cadence Allegro</span><span class="tag">Autodesk Eagle / Fusion Electronics</span><span class="tag">Proteus</span><span class="tag">LTspice simulation</span><span class="tag">Multi-layer &amp; HDI boards</span><span class="tag">RF &amp; antenna layout</span><span class="tag">Power supply &amp; battery design</span><span class="tag">DFM / DFT review</span><span class="tag">BOM &amp; component sourcing</span><span class="tag">Board bring-up &amp; debugging</span></div>
+      </div>
+      <div class="mrow">
+        <div class="mkey">Mechanical &amp; enclosure</div>
+        <div class="mval"><span class="tag">SolidWorks</span><span class="tag">Autodesk Fusion 360</span><span class="tag">Autodesk Inventor</span><span class="tag">3D printing (FDM / SLA / SLS)</span><span class="tag">Injection-moulded enclosures</span><span class="tag">Sheet metal design</span><span class="tag">IP-rated / waterproof enclosures</span><span class="tag">Wearable &amp; handheld form factors</span><span class="tag">Tolerance &amp; fit analysis</span><span class="tag">Manufacturing drawings</span></div>
+      </div>
+      <div class="mrow">
+        <div class="mkey">Backend &amp; cloud</div>
+        <div class="mval"><span class="tag">Node.js / Express / NestJS</span><span class="tag">Python (Django / FastAPI / Flask)</span><span class="tag">Ruby on Rails</span><span class="tag">REST &amp; GraphQL APIs</span><span class="tag">WebSockets &amp; real-time data</span><span class="tag">PostgreSQL / MySQL</span><span class="tag">MongoDB</span><span class="tag">Redis</span><span class="tag">InfluxDB / time-series data</span><span class="tag">AWS (IoT Core, Lambda, EC2, S3)</span><span class="tag">Microsoft Azure / IoT Hub</span><span class="tag">Google Cloud</span><span class="tag">Docker</span><span class="tag">MQTT brokers (Mosquitto / EMQX)</span></div>
+      </div>
+      <div class="mrow">
+        <div class="mkey">Web front end</div>
+        <div class="mval"><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">Vue.js</span><span class="tag">TypeScript</span><span class="tag">Tailwind CSS</span><span class="tag">Real-time IoT dashboards</span><span class="tag">Data visualisation (Chart.js / D3)</span><span class="tag">Admin &amp; customer portals</span><span class="tag">Progressive web apps (PWA)</span></div>
       </div>
       <div class="mrow">
         <div class="mkey">Mobile apps</div>
-        <div class="mval"><span class="tag">iOS</span><span class="tag">Android</span><span class="tag">Flutter</span><span class="tag">React Native</span><span class="tag">Swift / SwiftUI</span><span class="tag">Kotlin</span><span class="tag">BLE companion apps</span><span class="tag">UI/UX design</span></div>
+        <div class="mval"><span class="tag">iOS (Swift / SwiftUI)</span><span class="tag">Android (Kotlin / Jetpack Compose)</span><span class="tag">Flutter</span><span class="tag">React Native</span><span class="tag">BLE companion apps</span><span class="tag">Device provisioning &amp; pairing</span><span class="tag">Push notifications</span><span class="tag">Offline sync</span><span class="tag">App Store &amp; Google Play release</span></div>
       </div>
       <div class="mrow">
-        <div class="mkey">PCB &amp; mechanical</div>
-        <div class="mval"><span class="tag">Altium</span><span class="tag">Proteus</span><span class="tag">Board bring-up</span><span class="tag">SolidWorks</span><span class="tag">KiCad</span><span class="tag">Eagle</span><span class="tag">OrCAD / Cadence Allegro</span><span class="tag">Fusion 360</span><span class="tag">Inventor</span></div>
+        <div class="mkey">UI/UX &amp; embedded GUI</div>
+        <div class="mval"><span class="tag">Figma</span><span class="tag">User research &amp; flows</span><span class="tag">Wireframes &amp; prototypes</span><span class="tag">Design systems</span><span class="tag">LVGL</span><span class="tag">TouchGFX</span><span class="tag">Qt / QML</span><span class="tag">Touchscreen &amp; display UIs</span></div>
       </div>
       <div class="mrow">
         <div class="mkey">Security</div>
-        <div class="mval"><span class="tag">Key management</span><span class="tag">E2E encryption</span><span class="tag">Secure firmware</span></div>
+        <div class="mval"><span class="tag">Secure boot</span><span class="tag">Firmware signing &amp; encryption</span><span class="tag">TLS / mTLS</span><span class="tag">Key management</span><span class="tag">Secure elements (ATECC / SE050)</span><span class="tag">End-to-end encryption</span><span class="tag">Secure OTA updates</span><span class="tag">Penetration-test remediation</span></div>
+      </div>
+      <div class="mrow">
+        <div class="mkey">Testing &amp; DevOps</div>
+        <div class="mval"><span class="tag">Unit testing (Unity / Ceedling / GoogleTest)</span><span class="tag">Hardware-in-the-loop (HIL) testing</span><span class="tag">J-Link / Ozone / GDB</span><span class="tag">Oscilloscope &amp; logic analyser</span><span class="tag">Power profiling</span><span class="tag">Git / GitHub / GitLab</span><span class="tag">CI/CD (GitHub Actions / GitLab CI)</span><span class="tag">Automated firmware builds</span></div>
+      </div>
+      <div class="mrow">
+        <div class="mkey">Compliance &amp; certification</div>
+        <div class="mval"><span class="tag">FCC / CE / UKCA pre-compliance</span><span class="tag">Bluetooth SIG qualification</span><span class="tag">EMC-aware design</span><span class="tag">RoHS / REACH BOMs</span><span class="tag">Medical software (IEC 62304)</span><span class="tag">FDA submission support</span><span class="tag">Design documentation &amp; traceability</span></div>
       </div>
       <div class="mrow">
         <div class="mkey">Languages</div>
-        <div class="mval"><span class="tag">C</span><span class="tag">C++</span><span class="tag">Python</span><span class="tag">JavaScript / TypeScript</span><span class="tag">Dart</span><span class="tag">Swift</span><span class="tag">Kotlin</span><span class="tag">MATLAB / Simulink</span></div>
+        <div class="mval"><span class="tag">C</span><span class="tag">C++</span><span class="tag">Python</span><span class="tag">JavaScript / TypeScript</span><span class="tag">Dart</span><span class="tag">Swift</span><span class="tag">Kotlin</span><span class="tag">Ruby</span><span class="tag">MATLAB / Simulink</span><span class="tag">Bash / shell</span></div>
       </div>
     </div>
   </div>
